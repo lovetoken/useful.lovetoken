@@ -1,7 +1,7 @@
 Package: useful.lovetoken
 Type: Package
 Title: Useful functions for lovetoken
-Version: 0.1
+Version: 0.11
 Date: 2016-02-05
 Author: HyoJin_Song <lt.lovetoken@gmail.com>
 Maintainer: HyoJin_Song <lt.lovetoken@gmail.com>
