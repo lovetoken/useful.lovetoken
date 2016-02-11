@@ -2,17 +2,20 @@
 #'
 #' 2개 이상의 Package들을 한번에 로드하며, 동시에 업데이트 가능 패키지를 업데이트 한 후 이전버전과 설치된 버전을 요약하여 출력합니다.
 #' @param packages 불러올 패키지를 vector 형으로 작성합니다. 문자열로 작성 합니다.
+#' @param auto.upd 패키지를 불러오기 전에 \code{update.packages(ask=F)} 를 실행시켜 모든 패키지의 업그레이드를 수행합니다. 원치 않는다면 \code{auto.upd=FALSE} 를 입력합니다.
 #' @param auto.ins 만약 불러올 패키지 중에 설치가 되어있지 않은 패키지가 있다면 자동으로 설치할 것인지 여부를 정합니다.
 #' @param message 패키지 로드 결과 summary 를 출력할 것인지 여부를 정합니다.
 #' @return summary 결과를 data.frame 형으로 반환하며, \code{message=FALSE} 시 반환되는 것은 없습니다.
 #' @seealso \link{library}
 #' @export
 #' @examples
-#' # 단순 패키지 로드
+#' # 다중의 패키지 단순 로드
+#' librarys(packages=c("abind", "acepack", "animation", "arules", "ash"), auto.upd=FALSE)
+#' # 기 설치된 모든패키지 업그레이드 이후 다중 패키지 로드
 #' librarys(packages=c("abind", "acepack", "animation", "arules", "ash"))
-#' # 미설치 패키지 설치와 동시에 로드
+#' # 미설치 패키지 설치 및 업그레이드 이후 다중 패키지 로드
 #' librarys(packages=c("abind", "acepack", "animation", "arules", "ash"), auto.ins=TRUE)
-librarys <- function(packages, auto.ins=FALSE, message=TRUE){
+librarys <- function(packages, auto.upd=TRUE, auto.ins=FALSE, message=TRUE){
 
   # pre
   options(warn=-1)
@@ -41,13 +44,15 @@ librarys <- function(packages, auto.ins=FALSE, message=TRUE){
       install.packages(i)
     }
 
-    # auto update packages
-    update.packages(ask=F)
+    if (auto.upd) {
+      update.packages(ask=F)
+    }
 
   } else {
 
-    # auto update packages
-    update.packages(ask=F)
+    if (auto.upd) {
+      update.packages(ask=F)
+    }
 
   }
 
