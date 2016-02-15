@@ -11,8 +11,8 @@
 #' recent_weekend(8, as.Date("2000-08-20"))
 recent_weekend <- function(recent_day, to=Sys.Date()){
   # require packages
-  stopifnot(require(chron)==T)
-  stopifnot(require(dplyr)==T)
+  stopifnot(require(chron))
+  stopifnot(require(dplyr))
 
   # find
   vec <- to %>% seq(., .-recent_day*7, by=-1)
@@ -39,8 +39,8 @@ recent_weekend <- function(recent_day, to=Sys.Date()){
 #' recent_weekday(20, as.Date("2000-08-20"))
 recent_weekday <- function(recent_day, to=Sys.Date()){
   # require packages
-  stopifnot(require(chron)==T)
-  stopifnot(require(dplyr)==T)
+  stopifnot(require(chron))
+  stopifnot(require(dplyr))
 
   # find
   vec <- to %>% seq(., .-recent_day*2, by=-1)

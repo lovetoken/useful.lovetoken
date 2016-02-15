@@ -16,7 +16,6 @@
 #' # 미설치 패키지 설치 및 업그레이드 이후 다중 패키지 로드
 #' librarys(packages=c("abind", "acepack", "animation", "arules", "ash"), auto.ins=TRUE)
 librarys <- function(packages, auto.upd=TRUE, auto.ins=FALSE, message=TRUE){
-
   # pre
   options(warn=-1)
   stopifnot(is.character(packages))

@@ -14,7 +14,7 @@
 #' NA_paste0(A, B)
 NA_paste0 <- function(...){
 
-  stopifnot(require("dplyr")==T)
+  stopifnot(require(dplyr))
 
   # list accesses
   li <- list(...)
