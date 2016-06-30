@@ -16,9 +16,9 @@ which.matrix <- function(logical.matrix){
 
   # content
   index <- which(logical.matrix)
-  nc <- ncol(logical.matrix)
-  qu <- index %/% nc
-  re <- index %% nc
+  nr <- nrow(logical.matrix)
+  qu <- index %/% nr
+  re <- index %% nr
 
   res <- data.frame(row = mapvalues(re, 0, 5), col = (qu+1)-(re==0))
 
