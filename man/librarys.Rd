@@ -7,26 +7,26 @@
 librarys(packages, auto.upd = TRUE, auto.ins = FALSE, message = TRUE)
 }
 \arguments{
-\item{packages}{불러올 패키지를 vector 형으로 작성합니다. 문자열로 작성 합니다.}
+\item{packages}{불러<U+FFFD><U+FFFD> <U+FFFD>�키지�<U+FFFD> vector <U+FFFD>�으�<U+FFFD> <U+FFFD>�성<U+FFFD>�니<U+FFFD><U+FFFD>. 문자<U+FFFD>�로 <U+FFFD>�성 <U+FFFD>�니<U+FFFD><U+FFFD>.}
 
-\item{auto.upd}{패키지를 불러오기 전에 \code{update.packages(ask=F)} 를 실행시켜 모든 패키지의 업그레이드를 수행합니다. 원치 않는다면 \code{auto.upd=FALSE} 를 입력합니다.}
+\item{auto.upd}{<U+FFFD>�키지�<U+FFFD> 불러<U+FFFD>�기 <U+FFFD>�에 \code{update.packages(ask=F)} �<U+FFFD> <U+FFFD>�행<U+FFFD>�켜 모든 <U+FFFD>�키지<U+FFFD><U+FFFD> <U+FFFD>�그<U+FFFD>�이<U+FFFD>��<U+FFFD> <U+FFFD>�행<U+FFFD>�니<U+FFFD><U+FFFD>. <U+FFFD>�치 <U+FFFD>�는<U+FFFD>�면 \code{auto.upd=FALSE} �<U+FFFD> <U+FFFD>�력<U+FFFD>�니<U+FFFD><U+FFFD>.}
 
-\item{auto.ins}{만약 불러올 패키지 중에 설치가 되어있지 않은 패키지가 있다면 자동으로 설치할 것인지 여부를 정합니다.}
+\item{auto.ins}{만약 불러<U+FFFD><U+FFFD> <U+FFFD>�키지 중에 <U+FFFD>�치가 <U+FFFD>�어<U+FFFD>��<U+FFFD> <U+FFFD>��<U+FFFD> <U+FFFD>�키지가 <U+FFFD>�다�<U+FFFD> <U+FFFD>�동<U+FFFD>�로 <U+FFFD>�치<U+FFFD><U+FFFD> 것인지 <U+FFFD>��<U+FFFD>�<U+FFFD> <U+FFFD>�합<U+FFFD>�다.}
 
-\item{message}{패키지 로드 결과 summary 를 출력할 것인지 여부를 정합니다.}
+\item{message}{<U+FFFD>�키지 로드 결과 summary �<U+FFFD> 출력<U+FFFD><U+FFFD> 것인지 <U+FFFD>��<U+FFFD>�<U+FFFD> <U+FFFD>�합<U+FFFD>�다.}
 }
 \value{
-summary 결과를 data.frame 형으로 반환하며, \code{message=FALSE} 시 반환되는 것은 없습니다.
+summary 결과�<U+FFFD> data.frame <U+FFFD>�으�<U+FFFD> 반환<U+FFFD>�며, \code{message=FALSE} <U+FFFD><U+FFFD> 반환<U+FFFD>�는 것�<U+FFFD> <U+FFFD>�습<U+FFFD>�다.
 }
 \description{
-2개 이상의 Package들을 한번에 로드하며, 동시에 업데이트 가능 패키지를 업데이트 한 후 이전버전과 설치된 버전을 요약하여 출력합니다.
+2�<U+FFFD> <U+FFFD>�상<U+FFFD><U+FFFD> Package<U+FFFD>�을 <U+FFFD>�번<U+FFFD><U+FFFD> 로드<U+FFFD>�며, <U+FFFD>�시<U+FFFD><U+FFFD> <U+FFFD>�데<U+FFFD>�트 가<U+FFFD><U+FFFD> <U+FFFD>�키지�<U+FFFD> <U+FFFD>�데<U+FFFD>�트 <U+FFFD><U+FFFD> <U+FFFD><U+FFFD> <U+FFFD>�전버전�<U+FFFD> <U+FFFD>�치<U+FFFD><U+FFFD> 버전<U+FFFD><U+FFFD> <U+FFFD>�약<U+FFFD>�여 출력<U+FFFD>�니<U+FFFD><U+FFFD>.
 }
 \examples{
-# 다중의 패키지 단순 로드
+# <U+653C><U+3E62>��중의 <U+653C><U+3E64>��<U+653C><U+3E64>��지 <U+653C><U+3E62>��<U+653C><U+3E63>�� 로드
 librarys(packages=c("abind", "acepack", "animation", "arules", "ash"), auto.upd=FALSE)
-# 기 설치된 모든패키지 업그레이드 이후 다중 패키지 로드
+# �<U+623C><U+3E30> <U+653C><U+3E63>��치된 모든<U+653C><U+3E64>��<U+653C><U+3E64>��지 <U+653C><U+3E63>��그레<U+653C><U+3E63>��<U+653C><U+3E62>�� <U+653C><U+3E63>��<U+653C><U+3E64>�� <U+653C><U+3E62>���<U+393C><U+3E31> <U+653C><U+3E64>��<U+653C><U+3E64>��지 로드
 librarys(packages=c("abind", "acepack", "animation", "arules", "ash"))
-# 미설치 패키지 설치 및 업그레이드 이후 다중 패키지 로드
+# 미설�<U+393C><U+3E38> <U+653C><U+3E64>��<U+653C><U+3E64>��지 <U+653C><U+3E63>���<U+393C><U+3E38> �<U+383C><U+3E66> <U+653C><U+3E63>��그레<U+653C><U+3E63>��<U+653C><U+3E62>�� <U+653C><U+3E63>��<U+653C><U+3E64>�� <U+653C><U+3E62>���<U+393C><U+3E31> <U+653C><U+3E64>��<U+653C><U+3E64>��지 로드
 librarys(packages=c("abind", "acepack", "animation", "arules", "ash"), auto.ins=TRUE)
 }
 \seealso{
