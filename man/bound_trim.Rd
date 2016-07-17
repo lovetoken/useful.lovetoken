@@ -7,14 +7,14 @@
 bound_trim(vector, min, max)
 }
 \arguments{
-\item{vector}{<U+FFFD>�<U+FFFD>�이<U+FFFD>�는 sequence�<U+FFFD> <U+FFFD>�력<U+FFFD>�니<U+FFFD><U+FFFD>. e.g \code{1:100}}
+\item{vector}{대상이되는 sequence를 입력합니다. e.g \code{1:100}}
 
-\item{min}{최소경계�<U+FFFD> 지<U+FFFD>�합<U+FFFD>�다. e.g \code{5}}
+\item{min}{최소경계를 지정합니다. e.g \code{5}}
 
-\item{max}{최�<U+FFFD>경계�<U+FFFD> 지<U+FFFD>�합<U+FFFD>�다. e.g \code{95}}
+\item{max}{최대경계를 지정합니다. e.g \code{95}}
 }
 \description{
-<U+FFFD>�반<U+FFFD>�열<U+FFFD>�서 최소치�<U+FFFD> 최�<U+FFFD>치�<U+FFFD> <U+FFFD>�어가<U+FFFD><U+FFFD>, <U+FFFD>�종<U+FFFD><U+FFFD> 경계<U+FFFD>�을 <U+FFFD>�겨버린 �<U+FFFD> 만을 <U+FFFD>�외<U+FFFD>�킨 결과�<U+FFFD> 반환<U+FFFD>�니<U+FFFD><U+FFFD>.
+일반수열에서 최소치와 최대치를 넘어가는, 일종의 경계선을 넘겨버린 값 만을 제외시킨 결과를 반환합니다.
 }
 \examples{
 bound_trim(1:100, 5, 95)

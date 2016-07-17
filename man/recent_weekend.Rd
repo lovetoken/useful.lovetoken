@@ -7,15 +7,15 @@
 recent_weekend(recent_day, to = Sys.Date())
 }
 \arguments{
-\item{recent_day}{몇일차�<U+FFFD> <U+FFFD>�거<U+FFFD><U+FFFD> 것인지 <U+FFFD>�합<U+FFFD>�다. <U+FFFD>�이<U+FFFD><U+FFFD> <U+FFFD>�식<U+FFFD>� <U+FFFD>�수<U+FFFD>�어<U+FFFD><U+FFFD> <U+FFFD>�니<U+FFFD><U+FFFD>.}
+\item{recent_day}{몇일차를 열거할 것인지 정합니다. 데이터 형식은 정수이어야 합니다.}
 
-\item{to}{<U+FFFD>�늘<U+FFFD>�자기�<U+FFFD><U+FFFD><U+FFFD> <U+FFFD>�합<U+FFFD>�다. <U+FFFD>�이<U+FFFD><U+FFFD> <U+FFFD>�식<U+FFFD>� Date <U+FFFD>�어<U+FFFD><U+FFFD> <U+FFFD>�니<U+FFFD><U+FFFD>.}
+\item{to}{오늘일자기준을 정합니다. 데이터 형식은 Date 이어야 합니다.}
 }
 \value{
-"\%Y-\%m-\%d" <U+FFFD>�식<U+FFFD><U+FFFD> Date <U+FFFD>�식 벡터가 반환<U+FFFD>�니<U+FFFD><U+FFFD>.
+"\%Y-\%m-\%d" 형식인 Date 형식 벡터가 반환됩니다.
 }
 \description{
-<U+FFFD>�늘<U+FFFD>�자�<U+FFFD> 기�<U+FFFD><U+FFFD>�로 최근<U+FFFD>�자�<U+FFFD> 주말만을 뽑아 <U+FFFD>�거<U+FFFD>�니<U+FFFD><U+FFFD>.
+오늘일자를 기준으로 최근일자를 주말만을 뽑아 열거합니다.
 }
 \examples{
 recent_weekend(8)

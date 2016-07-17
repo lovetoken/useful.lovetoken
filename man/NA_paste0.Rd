@@ -7,7 +7,7 @@
 NA_paste0(...)
 }
 \description{
-결측�<U+FFFD> NA 가 존재<U+FFFD><U+FFFD> <U+FFFD><U+FFFD>, NA�<U+FFFD> 문자<U+FFFD>�로 <U+FFFD>�식<U+FFFD>��<U+FFFD> <U+FFFD>�고 공�<U+FFFD><U+FFFD>�로 paste �<U+FFFD> <U+FFFD>�행<U+FFFD>�니<U+FFFD><U+FFFD>.
+결측치 NA 가 존재할 때, NA를 문자열로 인식하지 않고 공란으로 paste 를 수행합니다.
 }
 \examples{
 ### ex1
