@@ -15,8 +15,8 @@ rendering <- function(...){
 
 	# content
 
-	input <- list.files() %>% 
-		grep("\\.rmd", ., perl=T, value=T)
+	input <- list.files() %>%
+		grep("\\.rmd$", ., perl=T, value=T)
 
 	for(i in input){
 		res <- render(i, encoding="UTF-8", ...)
