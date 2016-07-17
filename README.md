@@ -1,8 +1,4 @@
 # useful.lovetoken package in R
-lovetoken  
-`r Sys.Date()`  
-
-
 
 ********
 
@@ -37,11 +33,11 @@ devtools::install_github("lovetoken/useful.lovetoken")
 
 
 ```r
-window(2, c = 2, min = 1, max = 9)
+window(2, c = 3, min = 1, max = 9)
 ```
 
 ```
-## [1] 1 2 3 4
+## [1] 1 2 3 4 5
 ```
 
 ```r

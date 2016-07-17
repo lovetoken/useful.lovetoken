@@ -51,7 +51,7 @@ devtools::install_github("lovetoken/useful.lovetoken")
 ## `window()` function
 
 ```{r}
-window(2, c = 2, min = 1, max = 9)
+window(2, c = 3, min = 1, max = 9)
 
 # 1 2 3 4 5 6 7 8 9  
 # |---c---|
