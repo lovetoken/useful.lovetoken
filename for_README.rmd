@@ -80,7 +80,6 @@ opendf() # open working dir
 
 ```{r}
 desc(mtcars)
-knitr::kable(desc(mtcars))
 ```
 
 ********
