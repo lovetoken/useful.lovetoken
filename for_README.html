@@ -10,7 +10,7 @@
 
 <meta name="author" content="lovetoken" />
 
-<meta name="date" content="2016-07-17" />
+<meta name="date" content="2016-07-18" />
 
 <title>useful.lovetoken package in R</title>
 
@@ -86,6 +86,7 @@ code > span.in { color: #808080; font-weight: bold; font-style: italic; } /* Inf
       <li><a href="#example">Example</a><ul>
       <li><a href="#window-function"><code>window()</code> function</a></li>
       <li><a href="#openfd-function"><code>openfd()</code> function</a></li>
+      <li><a href="#desc-function"><code>desc()</code> function</a></li>
       </ul></li>
       </ul>  
     </div>
@@ -131,7 +132,11 @@ code > span.in { color: #808080; font-weight: bold; font-style: italic; } /* Inf
 </tr>
 <tr class="odd">
 <td align="left"><code>rendering()</code></td>
-<td align="left">Open files after rmarkdown::render()</td>
+<td align="left">Open files after <code>rmarkdown::render()</code></td>
+</tr>
+<tr class="even">
+<td align="left"><code>desc()</code></td>
+<td align="left">alias <code>psych::describe()</code></td>
 </tr>
 </tbody>
 </table>
@@ -162,6 +167,162 @@ devtools::<span class="kw">install_github</span>(<span class="st">&quot;lovetoke
 <p>R console 에서 워킹디렉토리를 직접 실행하여 열 수 있습니다.<br />
 혹은 특정파일을 여는것도 가능합니다.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">opendf</span>() <span class="co"># open working dir</span></code></pre></div>
+</div>
+<div id="desc-function" class="section level2">
+<h2><code>desc()</code> function</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">desc</span>(mtcars)</code></pre></div>
+<pre><code>## Loading required package: psych</code></pre>
+<pre><code>##      vars  n   mean     sd median   min    max  range
+## mpg     1 32  20.09   6.03  19.20 10.40  33.90  23.50
+## cyl     2 32   6.19   1.79   6.00  4.00   8.00   4.00
+## disp    3 32 230.72 123.94 196.30 71.10 472.00 400.90
+## hp      4 32 146.69  68.56 123.00 52.00 335.00 283.00
+## drat    5 32   3.60   0.53   3.70  2.76   4.93   2.17
+## wt      6 32   3.22   0.98   3.33  1.51   5.42   3.91
+## qsec    7 32  17.85   1.79  17.71 14.50  22.90   8.40
+## vs      8 32   0.44   0.50   0.00  0.00   1.00   1.00
+## am      9 32   0.41   0.50   0.00  0.00   1.00   1.00
+## gear   10 32   3.69   0.74   4.00  3.00   5.00   2.00
+## carb   11 32   2.81   1.62   2.00  1.00   8.00   7.00</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr::<span class="kw">kable</span>(<span class="kw">desc</span>(mtcars))</code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">vars</th>
+<th align="right">n</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="right">median</th>
+<th align="right">min</th>
+<th align="right">max</th>
+<th align="right">range</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">mpg</td>
+<td align="right">1</td>
+<td align="right">32</td>
+<td align="right">20.090625</td>
+<td align="right">6.0269481</td>
+<td align="right">19.200</td>
+<td align="right">10.400</td>
+<td align="right">33.900</td>
+<td align="right">23.500</td>
+</tr>
+<tr class="even">
+<td align="left">cyl</td>
+<td align="right">2</td>
+<td align="right">32</td>
+<td align="right">6.187500</td>
+<td align="right">1.7859216</td>
+<td align="right">6.000</td>
+<td align="right">4.000</td>
+<td align="right">8.000</td>
+<td align="right">4.000</td>
+</tr>
+<tr class="odd">
+<td align="left">disp</td>
+<td align="right">3</td>
+<td align="right">32</td>
+<td align="right">230.721875</td>
+<td align="right">123.9386938</td>
+<td align="right">196.300</td>
+<td align="right">71.100</td>
+<td align="right">472.000</td>
+<td align="right">400.900</td>
+</tr>
+<tr class="even">
+<td align="left">hp</td>
+<td align="right">4</td>
+<td align="right">32</td>
+<td align="right">146.687500</td>
+<td align="right">68.5628685</td>
+<td align="right">123.000</td>
+<td align="right">52.000</td>
+<td align="right">335.000</td>
+<td align="right">283.000</td>
+</tr>
+<tr class="odd">
+<td align="left">drat</td>
+<td align="right">5</td>
+<td align="right">32</td>
+<td align="right">3.596563</td>
+<td align="right">0.5346787</td>
+<td align="right">3.695</td>
+<td align="right">2.760</td>
+<td align="right">4.930</td>
+<td align="right">2.170</td>
+</tr>
+<tr class="even">
+<td align="left">wt</td>
+<td align="right">6</td>
+<td align="right">32</td>
+<td align="right">3.217250</td>
+<td align="right">0.9784574</td>
+<td align="right">3.325</td>
+<td align="right">1.513</td>
+<td align="right">5.424</td>
+<td align="right">3.911</td>
+</tr>
+<tr class="odd">
+<td align="left">qsec</td>
+<td align="right">7</td>
+<td align="right">32</td>
+<td align="right">17.848750</td>
+<td align="right">1.7869432</td>
+<td align="right">17.710</td>
+<td align="right">14.500</td>
+<td align="right">22.900</td>
+<td align="right">8.400</td>
+</tr>
+<tr class="even">
+<td align="left">vs</td>
+<td align="right">8</td>
+<td align="right">32</td>
+<td align="right">0.437500</td>
+<td align="right">0.5040161</td>
+<td align="right">0.000</td>
+<td align="right">0.000</td>
+<td align="right">1.000</td>
+<td align="right">1.000</td>
+</tr>
+<tr class="odd">
+<td align="left">am</td>
+<td align="right">9</td>
+<td align="right">32</td>
+<td align="right">0.406250</td>
+<td align="right">0.4989909</td>
+<td align="right">0.000</td>
+<td align="right">0.000</td>
+<td align="right">1.000</td>
+<td align="right">1.000</td>
+</tr>
+<tr class="even">
+<td align="left">gear</td>
+<td align="right">10</td>
+<td align="right">32</td>
+<td align="right">3.687500</td>
+<td align="right">0.7378041</td>
+<td align="right">4.000</td>
+<td align="right">3.000</td>
+<td align="right">5.000</td>
+<td align="right">2.000</td>
+</tr>
+<tr class="odd">
+<td align="left">carb</td>
+<td align="right">11</td>
+<td align="right">32</td>
+<td align="right">2.812500</td>
+<td align="right">1.6152000</td>
+<td align="right">2.000</td>
+<td align="right">1.000</td>
+<td align="right">8.000</td>
+<td align="right">7.000</td>
+</tr>
+</tbody>
+</table>
 <hr />
 </div>
 </div>
@@ -172,7 +333,7 @@ devtools::<span class="kw">install_github</span>(<span class="st">&quot;lovetoke
 
 <div id="postamble" data-toggle="wy-nav-shift" class="status">
 <p class="author"><span class="glyphicon glyphicon-user"></span> lovetoken</p>
-<p class="date"><span class="glyphicon glyphicon-calendar"></span> 2016-07-17</p>
+<p class="date"><span class="glyphicon glyphicon-calendar"></span> 2016-07-18</p>
 </div>
 
 

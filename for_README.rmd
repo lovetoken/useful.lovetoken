@@ -35,7 +35,8 @@ R에서 제가 개인적으로 만든 편의함수를 모아놓은 패키지 입
 `recent_weekend()`  | 최근 주말기준 날짜열을 반환합니다.
 `window()`	        | Bandwidth indexing with Bound trim
 `openfd()`			| Open the file or directory directly on R console
-`rendering()`		| Open files after rmarkdown::render()
+`rendering()`		| Open files after `rmarkdown::render()`
+`desc()`		    | alias `psych::describe()`
 
 # Install
 
@@ -73,6 +74,13 @@ R console 에서 워킹디렉토리를 직접 실행하여 열 수 있습니다.
 
 ```{r eval=F}
 opendf() # open working dir
+```
+
+## `desc()` function
+
+```{r}
+desc(mtcars)
+knitr::kable(desc(mtcars))
 ```
 
 ********
