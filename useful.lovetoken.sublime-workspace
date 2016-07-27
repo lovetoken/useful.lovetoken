@@ -172,9 +172,13 @@
 	"command_palette":
 	{
 		"height": 384.0,
-		"last_filter": "ssyrm",
+		"last_filter": "replr",
 		"selected_items":
 		[
+			[
+				"replr",
+				"SublimeREPL: R"
+			],
 			[
 				"ssyrm",
 				"Set Syntax: R Markdown"
@@ -182,10 +186,6 @@
 			[
 				"ssyr",
 				"Set Syntax: R"
-			],
-			[
-				"replr",
-				"SublimeREPL: R"
 			],
 			[
 				"replpython",
@@ -589,6 +589,7 @@
 	"file_history":
 	[
 		"/Users/lovetoken/Googledrive/02_Study/01_Statistic/31_R/02_MyPackage/01_Myself/useful.lovetoken/README.md",
+		"/Users/lovetoken/Googledrive/02_Study/01_Statistic/31_R/02_MyPackage/01_Myself/useful.lovetoken/R/desc.R",
 		"/Users/lovetoken/Googledrive/02_Study/01_Statistic/31_R/11_Rcafe/Step_function_Model/Rmarkdown.Rmd",
 		"/Users/lovetoken/Googledrive/02_Study/01_Statistic/31_R/01_RLab/12_Modeling/Machine_Learning/word_dataset.rmd",
 		"/Users/lovetoken/Googledrive/02_Study/01_Statistic/31_R/01_RLab/12_Modeling/Machine_Learning_using_word_dataset",
@@ -714,8 +715,7 @@
 		"/Users/lovetoken/Desktop/OneDrive/02_Study/01_Statistic/31_R/01_R_Lab/find_password_solution/Rmarkdown.rmd",
 		"/Users/lovetoken/Desktop/OneDrive/02_Study/01_Statistic/31_R/01_R_Lab/03_QA/황질문/simpleregfit.Rmd",
 		"/Users/lovetoken/Desktop/OneDrive/09_HUFS_Statistic_GS/9-1_GS_Paper/01_Paper/Song_GSPaper.tex",
-		"/Users/lovetoken/Desktop/OneDrive/09_HUFS_Statistic_GS/9-1_GS_Paper/02_Data_Analysis/Evaluation/Evaluation2.Rmd",
-		"/Users/lovetoken/Desktop/OneDrive/31_Key/01_Program License/MS_Office2016_HUFS/CD_KEY"
+		"/Users/lovetoken/Desktop/OneDrive/09_HUFS_Statistic_GS/9-1_GS_Paper/02_Data_Analysis/Evaluation/Evaluation2.Rmd"
 	],
 	"find":
 	{
@@ -734,6 +734,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			",",
+			" ",
+			"        ",
+			"       ",
+			"      ",
+			"     ",
 			"type",
 			"h20",
 			"추가함",
@@ -855,13 +861,7 @@
 			"짤막한 한 컷",
 			"2번",
 			"2번째",
-			"one frame",
-			"M2",
-			"t1",
-			"\\.*?/t1",
-			"/.*?/t1",
-			"/.*/t1",
-			"\\.*//t1"
+			"one frame"
 		],
 		"highlight": true,
 		"in_selection": false,
