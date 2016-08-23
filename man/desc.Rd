@@ -15,7 +15,7 @@ desc(x, choice = c("vars", "n", "mean", "sd", "median", "min", "max",
 \item{...}{Arguments to be passed to \code{psych::describe()}}
 }
 \description{
-psych 패키지의 \code{describe()} 를 이용하여 알맞게 수정한 alias 함수 입니다.
+psych <U+FFFD>�키지<U+FFFD><U+FFFD> \code{describe()} �<U+FFFD> <U+FFFD>�용<U+FFFD>�여 <U+FFFD>�맞�<U+FFFD> <U+FFFD>�정<U+FFFD><U+FFFD> alias <U+FFFD>�수 <U+FFFD>�니<U+FFFD><U+FFFD>.
 }
 \examples{
 desc(mtcars)

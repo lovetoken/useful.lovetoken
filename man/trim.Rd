@@ -7,12 +7,12 @@
 trim(cha, method = "trailing")
 }
 \arguments{
-\item{cha}{가공의 대상이 되는 character type 자료를 입력합니다.}
+\item{cha}{가공의 <U+FFFD>�<U+FFFD>�이 <U+FFFD>�는 character type <U+FFFD>�료�<U+FFFD> <U+FFFD>�력<U+FFFD>�니<U+FFFD><U+FFFD>.}
 
-\item{method}{잘라내는 방법을 택합니다.}
+\item{method}{<U+FFFD>�라<U+FFFD>�는 방법<U+FFFD><U+FFFD> <U+FFFD>�합<U+FFFD>�다.}
 }
 \description{
-공란(whitespace)을 잘라냅니다.
+공�<U+FFFD>(whitespace)<U+FFFD><U+FFFD> <U+FFFD>�라<U+FFFD>�니<U+FFFD><U+FFFD>.
 }
 \examples{
 trim("  Wow!  ", method="leading")
