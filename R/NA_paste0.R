@@ -12,6 +12,7 @@
 #' B <- c("world", "world!", NA)
 #' paste0(A, B)
 #' NA_paste0(A, B)
+
 NA_paste0 <- function(...){
 
   stopifnot(require(dplyr))
@@ -24,6 +25,6 @@ NA_paste0 <- function(...){
     x[is.na(x)] <- "" ;x
   }) %>%
     data.frame %>%
-    apply(1, function(x, ...) paste0(x, collapse=""))
+    apply(1, function(x, ...) paste0(x, collapse = ""))
 
 }

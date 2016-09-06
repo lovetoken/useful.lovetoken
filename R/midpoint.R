@@ -6,7 +6,9 @@
 #' @export
 #' @examples
 #' midpoint(1:10)
+
 midpoint <- function(x, ...){
+
   # pre
   stopifnot(is.vector(x))
   stopifnot(require(dplyr))
@@ -18,4 +20,5 @@ midpoint <- function(x, ...){
 
   # return
   return(res)
+
 }

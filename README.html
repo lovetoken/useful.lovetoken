@@ -10,7 +10,7 @@
 
 <meta name="author" content="lovetoken" />
 
-<meta name="date" content="2016-07-18" />
+<meta name="date" content="2016-09-06" />
 
 <title>useful.lovetoken package in R</title>
 
@@ -93,59 +93,14 @@ code > span.in { color: #808080; font-weight: bold; font-style: italic; } /* Inf
 </div>
 
 <div id="main">
-<hr />
 <div id="overview" class="section level1">
 <h1>Overview</h1>
-<p>R에서 제가 개인적으로 만든 편의함수를 모아놓은 패키지 입니다.<br />
-제공되는 함수들의 리스트는 다음과 같습니다.</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left">함수명칭</th>
-<th align="left">설명</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><code>bound_trim()</code></td>
-<td align="left">Bound trim the sequence vector</td>
-</tr>
-<tr class="even">
-<td align="left"><code>NA_paste0()</code></td>
-<td align="left">결측치 NA를 문자열로 paste 하지않고 무시하여 paste 합니다.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code>recent_weekday()</code></td>
-<td align="left">최근 평일기준 날짜열을 반환합니다.</td>
-</tr>
-<tr class="even">
-<td align="left"><code>recent_weekend()</code></td>
-<td align="left">최근 주말기준 날짜열을 반환합니다.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code>window()</code></td>
-<td align="left">Bandwidth indexing with Bound trim</td>
-</tr>
-<tr class="even">
-<td align="left"><code>openfd()</code></td>
-<td align="left">Open the file or directory directly on R console</td>
-</tr>
-<tr class="odd">
-<td align="left"><code>rendering()</code></td>
-<td align="left">Open files after <code>rmarkdown::render()</code></td>
-</tr>
-<tr class="even">
-<td align="left"><code>desc()</code></td>
-<td align="left">alias <code>psych::describe()</code></td>
-</tr>
-</tbody>
-</table>
+<p>R에서 제가 개인적으로 만든 편의함수를 모아놓은 패키지 입니다.</p>
 </div>
 <div id="install" class="section level1">
 <h1>Install</h1>
-<p>R에서 아래의 코드를 실행함으로써 패키지를 설치할 수 있습니다.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># install.packages(&quot;devtools&quot;)</span>
-devtools::<span class="kw">install_github</span>(<span class="st">&quot;lovetoken/useful.lovetoken&quot;</span>)</code></pre></div>
+<p>R에서 아래의 코드를 이용해 패키지를 설치할 수 있습니다.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">devtools::<span class="kw">install_github</span>(<span class="st">&quot;lovetoken/useful.lovetoken&quot;</span>)</code></pre></div>
 </div>
 <div id="example" class="section level1">
 <h1>Example</h1>
@@ -171,7 +126,6 @@ devtools::<span class="kw">install_github</span>(<span class="st">&quot;lovetoke
 <div id="desc-function" class="section level2">
 <h2><code>desc()</code> function</h2>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">desc</span>(mtcars)</code></pre></div>
-<pre><code>## Loading required package: psych</code></pre>
 <pre><code>##      vars  n   mean     sd median   min    max  range
 ## mpg     1 32  20.09   6.03  19.20 10.40  33.90  23.50
 ## cyl     2 32   6.19   1.79   6.00  4.00   8.00   4.00
@@ -184,7 +138,6 @@ devtools::<span class="kw">install_github</span>(<span class="st">&quot;lovetoke
 ## am      9 32   0.41   0.50   0.00  0.00   1.00   1.00
 ## gear   10 32   3.69   0.74   4.00  3.00   5.00   2.00
 ## carb   11 32   2.81   1.62   2.00  1.00   8.00   7.00</code></pre>
-<hr />
 </div>
 </div>
 </div>
@@ -194,7 +147,7 @@ devtools::<span class="kw">install_github</span>(<span class="st">&quot;lovetoke
 
 <div id="postamble" data-toggle="wy-nav-shift" class="status">
 <p class="author"><span class="glyphicon glyphicon-user"></span> lovetoken</p>
-<p class="date"><span class="glyphicon glyphicon-calendar"></span> 2016-07-18</p>
+<p class="date"><span class="glyphicon glyphicon-calendar"></span> 2016-09-06</p>
 </div>
 
 

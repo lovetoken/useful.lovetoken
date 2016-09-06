@@ -9,20 +9,20 @@
 #' @examples
 #' recent_weekend(8)
 #' recent_weekend(8, as.Date("2000-08-20"))
-recent_weekend <- function(recent_day, to=Sys.Date()){
+
+recent_weekend <- function(recent_day, to = Sys.Date()){
   # require packages
-  stopifnot(require(chron))
-  stopifnot(require(dplyr))
+  stopifnot(require(chron)); stopifnot(require(dplyr))
 
   # find
-  vec <- to %>% seq(., .-recent_day*7, by=-1)
-  logical <- cumsum(vec %>% is.weekend)==recent_day
+  vec <- to %>% seq(., .-recent_day*7, by = -1)
+  logical <- cumsum(vec %>% is.weekend) == recent_day
   index <- logical %>% which %>% min
   resday <- vec[index]
 
   # output
-  vec <- seq(resday, to, by=1)
-  res <- vec[vec %>% is.weekend]; rm(vec, logical, index, resday)
+  vec <- seq(resday, to, by = 1)
+  res <- vec[vec %>% is.weekend]
   return(res)
 }
 
@@ -37,19 +37,19 @@ recent_weekend <- function(recent_day, to=Sys.Date()){
 #' @examples
 #' recent_weekday(20)
 #' recent_weekday(20, as.Date("2000-08-20"))
-recent_weekday <- function(recent_day, to=Sys.Date()){
+
+recent_weekday <- function(recent_day, to = Sys.Date()){
   # require packages
-  stopifnot(require(chron))
-  stopifnot(require(dplyr))
+  stopifnot(require(chron)); stopifnot(require(dplyr))
 
   # find
-  vec <- to %>% seq(., .-recent_day*2, by=-1)
-  logical <- cumsum(!vec %>% is.weekend)==recent_day
+  vec <- to %>% seq(., .-recent_day*2, by = -1)
+  logical <- cumsum(!vec %>% is.weekend) == recent_day
   index <- logical %>% which %>% min
   resday <- vec[index]
 
   # output
-  vec <- seq(resday, to, by=1)
-  res <- vec[!vec %>% is.weekend]; rm(vec, logical, index, resday)
+  vec <- seq(resday, to, by = 1)
+  res <- vec[!vec %>% is.weekend]
   return(res)
 }

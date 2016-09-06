@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>recent_weekend. useful.lovetoken 0.4.4</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="">
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/highlight.css" rel="stylesheet">
+<link href="css/staticdocs.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+  </head>
+
+  <body>
+    <div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="index.html">useful.lovetoken 0.4.4</a>
+      <div class="nav">
+        <ul class="nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="reference.html">Reference</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="container">
+      <header>
+        
+      </header>
+      
+      <h1>Sequence Date Generation (only Weekend) from recent day</h1>
+
+<div class="row">
+  <div class="span8">
+    <h2>Usage</h2>
+    <pre><span class="functioncall"><a href='recent_weekend.html'>recent_weekend</a></span><span class="keyword">(</span><span class="symbol">recent_day</span><span class="keyword">,</span> <span class="argument">to</span>&nbsp;<span class="argument">=</span>&nbsp;<span class="functioncall"><a href='http://www.rdocumentation.org/packages/base/topics/Sys.time'>Sys.Date</a></span><span class="keyword">(</span><span class="keyword">)</span><span class="keyword">)</span></pre>
+    
+    <h2>Arguments</h2>
+    <dl>
+      <dt>recent_day</dt>
+      <dd>ëª‡ì¼ì°¨ë&lt;U+FFFD&gt; &lt;U+FFFD&gt;´ê±°&lt;U+FFFD&gt;&lt;U+FFFD&gt; ê²ƒì¸ì§€ &lt;U+FFFD&gt;•í•©&lt;U+FFFD&gt;ˆë‹¤. &lt;U+FFFD&gt;°ì´&lt;U+FFFD&gt;&lt;U+FFFD&gt; &lt;U+FFFD&gt;•ì‹&lt;U+FFFD&gt;€ &lt;U+FFFD&gt;•ìˆ˜&lt;U+FFFD&gt;´ì–´&lt;U+FFFD&gt;&lt;U+FFFD&gt; &lt;U+FFFD&gt;©ë‹ˆ&lt;U+FFFD&gt;&lt;U+FFFD&gt;.</dd>
+      <dt>to</dt>
+      <dd>&lt;U+FFFD&gt;¤ëŠ˜&lt;U+FFFD&gt;¼ìê¸°ì&lt;U+FFFD&gt;&lt;U+FFFD&gt;&lt;U+FFFD&gt; &lt;U+FFFD&gt;•í•©&lt;U+FFFD&gt;ˆë‹¤. &lt;U+FFFD&gt;°ì´&lt;U+FFFD&gt;&lt;U+FFFD&gt; &lt;U+FFFD&gt;•ì‹&lt;U+FFFD&gt;€ Date &lt;U+FFFD&gt;´ì–´&lt;U+FFFD&gt;&lt;U+FFFD&gt; &lt;U+FFFD&gt;©ë‹ˆ&lt;U+FFFD&gt;&lt;U+FFFD&gt;.</dd>
+    </dl>
+    
+    <div class="Value">
+      <h2>Value</h2>
+
+      <p><dl>
+&quot;%Y-%m-%d&quot; &lt;U+FFFD&gt;•ì‹&lt;U+FFFD&gt;&lt;U+FFFD&gt; Date &lt;U+FFFD&gt;•ì‹ ë²¡í„°ê°€ ë°˜í™˜&lt;U+FFFD&gt;©ë‹ˆ&lt;U+FFFD&gt;&lt;U+FFFD&gt;.
+</dl></p>
+
+    </div>
+
+    <div class="Description">
+      <h2>Description</h2>
+
+      <p>&lt;U+FFFD&gt;¤ëŠ˜&lt;U+FFFD&gt;¼ìë¥&lt;U+FFFD&gt; ê¸°ì&lt;U+FFFD&gt;&lt;U+FFFD&gt;¼ë¡œ ìµœê·¼&lt;U+FFFD&gt;¼ìë¥&lt;U+FFFD&gt; ì£¼ë§ë§Œì„ ë½‘ì•„ &lt;U+FFFD&gt;´ê±°&lt;U+FFFD&gt;©ë‹ˆ&lt;U+FFFD&gt;&lt;U+FFFD&gt;.</p>
+
+    </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'><span class="functioncall"><a href='recent_weekend.html'>recent_weekend</a></span><span class="keyword">(</span><span class="number">8</span><span class="keyword">)</span></div>
+<div class='output'>[1] &quot;2016-08-13&quot; &quot;2016-08-14&quot; &quot;2016-08-20&quot; &quot;2016-08-21&quot;
+[5] &quot;2016-08-27&quot; &quot;2016-08-28&quot; &quot;2016-09-03&quot; &quot;2016-09-04&quot;
+</div>
+<div class='input'><span class="functioncall"><a href='recent_weekend.html'>recent_weekend</a></span><span class="keyword">(</span><span class="number">8</span><span class="keyword">,</span> <span class="functioncall"><a href='http://www.rdocumentation.org/packages/base/topics/as.Date'>as.Date</a></span><span class="keyword">(</span><span class="string">"2000-08-20"</span><span class="keyword">)</span><span class="keyword">)</span></div>
+<div class='output'>[1] &quot;2000-07-29&quot; &quot;2000-07-30&quot; &quot;2000-08-05&quot; &quot;2000-08-06&quot;
+[5] &quot;2000-08-12&quot; &quot;2000-08-13&quot; &quot;2000-08-19&quot; &quot;2000-08-20&quot;
+</div></pre>
+  </div>
+  <div class="span4 sidebar">
+    <!-- <ul>
+      <li>recent_weekend</li>
+    </ul>
+    <ul>
+      
+    </ul> -->
+
+    <h2>See also</h2>
+      <p><a href='http://www.rdocumentation.org/packages/chron/topics/is.holiday'>is.weekend</a></p>
+
+    
+
+
+  </div>
+</div>
+      
+      <footer>
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with <a href="https://getbootstrap.com/2.0.4/">bootstrap</a>.</p>
+      </footer>
+    </div>
+  </body>
+</html>

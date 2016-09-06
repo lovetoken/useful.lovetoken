@@ -8,11 +8,11 @@
 #' psum(1:5, c(1, 2, 3, 4, NA), c(1, NA, 3, 4, 5))
 #' psum(1:5, c(1, 2, 3, 4, NA), c(1, NA, 3, 4, 5), na.rm=T)
 
-psum <- function(..., na.rm=F) {
+psum <- function(..., na.rm = F){
 
   # content
   dat <- do.call(cbind, list(...))
-  res <- rowSums(dat, na.rm=na.rm)
+  res <- rowSums(dat, na.rm = na.rm)
   idx_na <- !rowSums(!is.na(dat))
   res[idx_na] <- NA
 

@@ -11,8 +11,8 @@
 which_matrix <- function(logical.matrix){
 
   # pre
-  stopifnot(is.matrix(logical.matrix))
   stopifnot(require(plyr))
+  stopifnot(is.matrix(logical.matrix))
 
   # content
   index <- which(logical.matrix)
@@ -42,8 +42,7 @@ which_approach <- function(x, k){
 
   # pre
   stopifnot(require(dplyr))
-  stopifnot(is.vector(x))
-  stopifnot(is.numeric(k))
+  stopifnot(is.vector(x)); stopifnot(is.numeric(k))
 
   # content
   res <- abs(x - k) %>% which.min

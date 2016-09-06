@@ -10,8 +10,7 @@ rendering <- function(...){
 
 	# pre
 
-	stopifnot(require(rmarkdown))
-	stopifnot(require(dplyr))
+	stopifnot(require(rmarkdown)); stopifnot(require(dplyr))
 
 	# content
 
@@ -19,7 +18,7 @@ rendering <- function(...){
 		grep("\\.[rR][mM][dD]$", ., perl=T, value=T)
 
 	for(i in input){
-		res <- render(i, encoding="UTF-8", ...)
+		res <- render(i, encoding = "UTF-8", ...)
 		openfd(res)
 	}
 

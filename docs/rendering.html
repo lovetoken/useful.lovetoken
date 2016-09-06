@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>rendering. useful.lovetoken 0.4.4</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="">
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/highlight.css" rel="stylesheet">
+<link href="css/staticdocs.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+  </head>
+
+  <body>
+    <div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="index.html">useful.lovetoken 0.4.4</a>
+      <div class="nav">
+        <ul class="nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="reference.html">Reference</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="container">
+      <header>
+        
+      </header>
+      
+      <h1>Open files after rmarkdown::render()</h1>
+
+<div class="row">
+  <div class="span8">
+    <h2>Usage</h2>
+    <pre><span class="functioncall"><a href='rendering.html'>rendering</a></span><span class="keyword">(</span><span class="symbol">...</span><span class="keyword">)</span></pre>
+        
+    <div class="Description">
+      <h2>Description</h2>
+
+      <p>rmarkdown &lt;U+FFFD&gt;®ÌÇ§ÏßÄ&lt;U+FFFD&gt;&lt;U+FFFD&gt; <code>render()</code> Î•&lt;U+FFFD&gt; Î≥¥Îã§ &lt;U+FFFD&gt;∏Î¶¨&lt;U+FFFD&gt;òÍ≤å &lt;U+FFFD&gt;¨Ïö©&lt;U+FFFD&gt;òÎäî &lt;U+FFFD&gt;ÅÏÜç&lt;U+FFFD&gt;®Ïàò &lt;U+FFFD&gt;ÖÎãà&lt;U+FFFD&gt;&lt;U+FFFD&gt;.
+&lt;U+FFFD&gt;ÑÏû¨ &lt;U+FFFD&gt;åÌÇπ&lt;U+FFFD&gt;îÎ†â&lt;U+FFFD&gt;†Î¶¨&lt;U+FFFD&gt;&lt;U+FFFD&gt; &lt;U+FFFD&gt;àÎäî <code>.rmd</code> &lt;U+FFFD&gt;åÏùº&lt;U+FFFD&gt;&lt;U+FFFD&gt; &lt;U+FFFD&gt;êÎèô&lt;U+FFFD&gt;ºÎ°ú rendering &lt;U+FFFD&gt;&lt;U+FFFD&gt; &lt;U+FFFD&gt;¥ÌõÑ &lt;U+FFFD&gt;ùÏÑ±&lt;U+FFFD&gt;&lt;U+FFFD&gt; Í≤∞Í≥ºÎ¨ºÏùÑ Î∞îÎ°ú &lt;U+FFFD&gt;§Ìñâ&lt;U+FFFD&gt;©Îãà&lt;U+FFFD&gt;&lt;U+FFFD&gt;.</p>
+
+    </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'><span class="functioncall"><a href='rendering.html'>rendering</a></span><span class="keyword">(</span><span class="keyword">)</span></div>
+<strong class='message'>Loading required package: rmarkdown</strong>
+<strong class='message'>
+
+processing file: README.rmd</strong>
+<div class='output'>  |                                                                         |                                                                 |   0%  |                                                                         |.....                                                            |   8%
+   inline R code fragments
+
+  |                                                                         |...........                                                      |  17%
+label: My_Rmarkdown_Environment (with options) 
+List of 3
+ $ echo   : logi FALSE
+ $ warning: logi FALSE
+ $ message: logi FALSE
+
+  |                                                                         |................                                                 |  25%
+  ordinary text without R code
+
+  |                                                                         |......................                                           |  33%
+label: unnamed-chunk-1 (with options) 
+List of 1
+ $ eval: symbol F
+
+  |                                                                         |...........................                                      |  42%
+  ordinary text without R code
+
+  |                                                                         |................................                                 |  50%
+label: unnamed-chunk-2
+  |                                                                         |......................................                           |  58%
+  ordinary text without R code
+
+  |                                                                         |...........................................                      |  67%
+label: unnamed-chunk-3
+  |                                                                         |.................................................                |  75%
+  ordinary text without R code
+
+  |                                                                         |......................................................           |  83%
+label: unnamed-chunk-4 (with options) 
+List of 1
+ $ eval: symbol F
+
+  |                                                                         |............................................................     |  92%
+  ordinary text without R code
+
+  |                                                                         |.................................................................| 100%
+label: unnamed-chunk-5
+
+</div>
+<strong class='message'>output file: README.knit.md
+</strong>
+<strong class='warning'>Warning message:
+MathJax doesn&#39;t work with self_contained when not using the rmarkdown &quot;default&quot; template.</strong>
+<div class='output'>&quot;C:/Program Files/RStudio/bin/pandoc/pandoc&quot; +RTS -K512m -RTS README.utf8.md --to html --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash --output README.html --smart --email-obfuscation none --self-contained --mathjax --variable &quot;mathjax-url:https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot; --standalone --section-divs --table-of-contents --toc-depth 2 --template &quot;C:\PROGRA~1\R\R-33~1.1\library\RMDFOR~1\TEMPLA~1\READTH~1\DEFAUL~1.HTM&quot; --variable &quot;theme:bootstrap&quot; --include-in-header &quot;C:\Users\kyobo\AppData\Local\Temp\RtmpsHK9j2\rmarkdown-str18c81ae43c7b.html&quot; --highlight-style kate --variable &quot;navigationjs=C:\PROGRA~1\R\R-33~1.1\library\RMARKD~1\rmd\h\NAVIGA~1.1&quot; 
+</div>
+<strong class='message'>
+Output created: README.html</strong></pre>
+  </div>
+  <div class="span4 sidebar">
+    <!-- <ul>
+      <li>rendering</li>
+    </ul>
+    <ul>
+      
+    </ul> -->
+
+
+
+
+  </div>
+</div>
+      
+      <footer>
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with <a href="https://getbootstrap.com/2.0.4/">bootstrap</a>.</p>
+      </footer>
+    </div>
+  </body>
+</html>

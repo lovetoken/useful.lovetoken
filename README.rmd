@@ -1,0 +1,65 @@
+---
+title: "useful.lovetoken package in R"
+author: "lovetoken"
+date: "`r Sys.Date()`"
+output: 
+  rmdformats::readthedown:
+    fig_height: 6
+    fig_width: 6
+    keep_md: yes
+---
+
+```{r My_Rmarkdown_Environment, echo=FALSE, warning=FALSE, message=FALSE}
+## attach library
+pacman::p_load("pacman" ,"knitr", "rmarkdown", "rmdformats", "dplyr", "useful.lovetoken")
+
+## knitr global option
+opts_chunk$set(fig.align = "center", warning = F, cache = F)
+
+## load image
+# load(".RData")
+```
+
+# Overview
+
+ For my self `useful.lovetoken` package
+
+# Install
+
+```{r eval=F}
+devtools::install_github("lovetoken/useful.lovetoken")
+```
+
+# Example
+
+## `window()` function
+
+```{r}
+window(2, c = 3, min = 1, max = 9)
+
+# 1 2 3 4 5 6 7 8 9  
+# |---c---|
+# 1 2 3 4 5
+```
+
+```{r}
+window(3, c = 8, min = 1, max = 9)
+
+# 1 2 3 4 5 6 7 8 9  
+#         |-----c-----|
+#         5 6 7 8 9
+```
+
+## `openfd()` function
+
+open working directory or file
+
+```{r eval=F}
+opendf() # 
+```
+
+## `desc()` function
+
+```{r}
+desc(mtcars)
+```

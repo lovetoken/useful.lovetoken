@@ -20,5 +20,6 @@ bound_trim(vector, min, max)
 bound_trim(1:100, 5, 95)
 bound_trim(c(1, 5, 9, 10), 0, 9)
 bound_trim(rnorm(100), -1.96, 1.96)
+
 }
 
