@@ -7,8 +7,8 @@
 rendering(...)
 }
 \description{
-rmarkdown <U+FFFD>�키지<U+FFFD><U+FFFD> \code{render()} �<U+FFFD> 보다 <U+FFFD>�리<U+FFFD>�게 <U+FFFD>�용<U+FFFD>�는 <U+FFFD>�속<U+FFFD>�수 <U+FFFD>�니<U+FFFD><U+FFFD>.
-<U+FFFD>�재 <U+FFFD>�킹<U+FFFD>�렉<U+FFFD>�리<U+FFFD><U+FFFD> <U+FFFD>�는 \code{.rmd} <U+FFFD>�일<U+FFFD><U+FFFD> <U+FFFD>�동<U+FFFD>�로 rendering <U+FFFD><U+FFFD> <U+FFFD>�후 <U+FFFD>�성<U+FFFD><U+FFFD> 결과물을 바로 <U+FFFD>�행<U+FFFD>�니<U+FFFD><U+FFFD>.
+rmarkdown 패키지의 \code{render()} 를 보다 편리하게 사용하는 상속함수 입니다.
+현재 워킹디렉토리에 있는 \code{.rmd} 파일을 자동으로 rendering 한 이후 생성된 결과물을 바로 실행합니다.
 }
 \examples{
 rendering()

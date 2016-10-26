@@ -7,9 +7,9 @@
 which_approach(x, k)
 }
 \arguments{
-\item{x}{찾을 <U+FFFD>�<U+FFFD>�이 <U+FFFD>�는 벡터<U+FFFD>�<U+FFFD>�을 <U+FFFD>�력<U+FFFD>�니<U+FFFD><U+FFFD>.}
+\item{x}{찾을 대상이 되는 벡터타입을 입력합니다.}
 
-\item{k}{찾아<U+FFFD><U+FFFD> <U+FFFD><U+FFFD> 최근<U+FFFD>�점<U+FFFD><U+FFFD> <U+FFFD>�<U+FFFD><U+FFFD> numeric <U+FFFD>�보�<U+FFFD> <U+FFFD>�력<U+FFFD>�니<U+FFFD><U+FFFD>.}
+\item{k}{찾아야 할 최근접점에 대한 numeric 정보를 입력합니다.}
 }
 \description{
 which approach index

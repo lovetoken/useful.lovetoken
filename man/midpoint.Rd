@@ -7,12 +7,12 @@
 midpoint(x, ...)
 }
 \arguments{
-\item{x}{가공의 <U+FFFD>�<U+FFFD>�이 <U+FFFD>�는 numeric type 벡터�<U+FFFD> <U+FFFD>�력<U+FFFD>�니<U+FFFD><U+FFFD>.}
+\item{x}{가공의 대상이 되는 numeric type 벡터를 입력합니다.}
 
-\item{...}{\code{lead()} <U+FFFD>�수<U+FFFD><U+FFFD> <U+FFFD>�속 부분입<U+FFFD>�다.}
+\item{...}{\code{lead()} 함수의 상속 부분입니다.}
 }
 \description{
-<U+FFFD>�수 벡터<U+FFFD><U+FFFD> <U+FFFD>�<U+FFFD><U+FFFD> midpoint �<U+FFFD> 반환<U+FFFD>�니<U+FFFD><U+FFFD>.
+실수 벡터에 대해 midpoint 를 반환합니다.
 }
 \examples{
 midpoint(1:10)

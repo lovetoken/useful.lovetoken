@@ -7,13 +7,13 @@
 window(W0, c, min, max)
 }
 \arguments{
-\item{W0}{Bandwidth <U+FFFD>�기�<U+FFFD> <U+FFFD>�정<U+FFFD>�니<U+FFFD><U+FFFD>.}
+\item{W0}{Bandwidth 크기를 설정합니다.}
 
-\item{c}{Bandwidth indexing <U+FFFD><U+FFFD> 기�<U+FFFD><U+FFFD>�을 <U+FFFD>�정<U+FFFD>�니<U+FFFD><U+FFFD>.}
+\item{c}{Bandwidth indexing 의 기준점을 설정합니다.}
 
-\item{min}{최소경계�<U+FFFD> 지<U+FFFD>�합<U+FFFD>�다.}
+\item{min}{최소경계를 지정합니다.}
 
-\item{max}{최�<U+FFFD>경계�<U+FFFD> 지<U+FFFD>�합<U+FFFD>�다.}
+\item{max}{최대경계를 지정합니다.}
 }
 \description{
 Bandwidth indexing with Bound trim

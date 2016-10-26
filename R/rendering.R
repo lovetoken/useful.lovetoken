@@ -7,13 +7,10 @@
 #' rendering()
 
 rendering <- function(...){
-
 	# pre
-
 	stopifnot(require(rmarkdown)); stopifnot(require(dplyr))
 
 	# content
-
 	input <- list.files() %>%
 		grep("\\.[rR][mM][dD]$", ., perl=T, value=T)
 
@@ -21,5 +18,4 @@ rendering <- function(...){
 		res <- render(i, encoding = "UTF-8", ...)
 		openfd(res)
 	}
-
 }

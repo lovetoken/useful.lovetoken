@@ -9,7 +9,6 @@
 #' trim("  Wow!  ", method="trailing")
 
 trim <- function(cha, method = "trailing"){
-
   # pre
   stopifnot(is.character(cha))
   stopifnot(method %in% c("leading", "trailing"))

@@ -7,7 +7,7 @@
 openfd(path = NULL)
 }
 \arguments{
-\item{path}{path the file or directory. default is \code{getwd()}}
+\item{path}{character, default is \code{getwd()}}
 }
 \description{
 Open the file or directory directly on R console
