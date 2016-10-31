@@ -1,25 +1,26 @@
 # useful.lovetoken package in R
-lovetoken  
 `r Sys.Date()`  
 
 
 
+For my self package
+
 # Overview
 
-R에서 제가 개인적으로 만든 편의함수를 모아놓은 패키지 입니다.  
+제가 자주 사용하는 코드를 간편하게 사용하기 위한 개인적인 패키지 입니다.  
 
-# Install
+* `.rmd` 포맷을 랜더링 한 이후 그 결과를 바로 볼 수 있게 하는 `rendering()`
+* 특정파일 혹은 폴더를 실행하는 `opendf()`
+* Summary 결과를 데이터프레임 형식으로 반환하는 `desc()`
 
-R에서 아래의 코드를 이용해 패키지를 설치할 수 있습니다.
-
-
-```r
-devtools::install_github("lovetoken/useful.lovetoken")
-```
+등의 함수를 주로 사용하고 있습니다.  
+그외의 간편함수들도 있으며 아래 예제들을 통해 쓰임을 알 수 있습니다.  
 
 # Example
 
-## `window()` function
+## `window()`
+
+경계문제로 인한 indexing 불가시 `window()` 를 이용하여 경계를 초과하는 부분을 절단합니다.
 
 
 ```r
@@ -38,7 +39,7 @@ window(2, c = 3, min = 1, max = 9)
 
 
 ```r
-window(3, c = 8, min = 1, max = 9)
+window(3, 8, 1, 9)
 ```
 
 ```
@@ -51,17 +52,9 @@ window(3, c = 8, min = 1, max = 9)
 #         5 6 7 8 9
 ```
 
-## `openfd()` function
-
-R console 에서 워킹디렉토리를 직접 실행하여 열 수 있습니다.  
-혹은 특정파일을 여는것도 가능합니다.  
-
-
-```r
-opendf() # open working dir
-```
-
 ## `desc()` function
+
+Summary 결과를 데이터프레임 형식으로 반환합니다.  
 
 
 ```r
@@ -82,3 +75,123 @@ desc(mtcars)
 ## gear   10 32   3.69   0.74   4.00  3.00   5.00   2.00
 ## carb   11 32   2.81   1.62   2.00  1.00   8.00   7.00
 ```
+
+## `psum()`
+
+`pmax()`, `pmin()` 등의 함수와 비슷한 쓰임의 parallel 합계를 계산합니다.  
+
+
+```r
+pmin(1:5, 5:1, c(1, NA, 3, 4, 5))
+```
+
+```
+## [1]  1 NA  3  2  1
+```
+
+```r
+pmin(1:5, 5:1, c(1, NA, 3, 4, 5), na.rm = T)
+```
+
+```
+## [1] 1 2 3 2 1
+```
+
+```r
+psum(1:5, 5:1, c(1, NA, 3, 4, 5))
+```
+
+```
+## [1]  7 NA  9 10 11
+```
+
+```r
+psum(1:5, 5:1, c(1, NA, 3, 4, 5), na.rm = T)
+```
+
+```
+## [1]  7  6  9 10 11
+```
+
+## `which_matrix()`
+
+
+```r
+(m <- matrix(sample(c(T,F), 25, T), 5, 5))
+```
+
+```
+##       [,1]  [,2]  [,3]  [,4]  [,5]
+## [1,]  TRUE FALSE  TRUE  TRUE FALSE
+## [2,] FALSE FALSE FALSE FALSE FALSE
+## [3,] FALSE  TRUE  TRUE FALSE FALSE
+## [4,]  TRUE FALSE  TRUE FALSE FALSE
+## [5,] FALSE FALSE FALSE FALSE  TRUE
+```
+
+```r
+which(m)
+```
+
+```
+## [1]  1  4  8 11 13 14 16 25
+```
+
+```r
+which_matrix(m)
+```
+
+```
+##   row col
+## 1   1   1
+## 2   4   1
+## 3   3   2
+## 4   1   3
+## 5   3   3
+## 6   4   3
+## 7   1   4
+## 8   5   5
+```
+
+## `NA_paste0()`
+
+`NA`를 문자열로 인식하지 않고 공란으로 `paste0()` 을 수행합니다.
+
+
+```r
+NA_paste0(c(3,6,NA,NA), c(NA,6,9,NA))
+```
+
+```
+## [1] "3"  "66" "9"  ""
+```
+
+
+```r
+A <- "Hello "
+B <- c("world", "world!", NA)
+paste0(A, B)
+```
+
+```
+## [1] "Hello world"  "Hello world!" "Hello NA"
+```
+
+```r
+NA_paste0(A, B)
+```
+
+```
+## [1] "Hello world"  "Hello world!" "Hello "
+```
+
+# Install
+
+
+```r
+devtools::install_github("lovetoken/useful.lovetoken")
+```
+
+# License
+
+[GPL-3](https://www.gnu.org/licenses/gpl-3.0.en.html)

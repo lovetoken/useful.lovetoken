@@ -15,12 +15,11 @@
 
 NA_paste0 <- function(...){
 
+  ## pre
   stopifnot(require(dplyr))
 
-  # list accesses
+  ## content
   li <- list(...)
-
-  # return
   lapply(li, function(x){
     x[is.na(x)] <- "" ;x
   }) %>%

@@ -1,38 +1,41 @@
 ---
 title: "useful.lovetoken package in R"
-author: "lovetoken"
 date: "`r Sys.Date()`"
 output: 
-  rmdformats::readthedown:
-    fig_height: 6
-    fig_width: 6
+  rmdformats::material:
+    lightbox: F
+    thumbnails: F
+    fig_height: 5
+    fig_width: 5
     keep_md: yes
 ---
 
 ```{r My_Rmarkdown_Environment, echo=FALSE, warning=FALSE, message=FALSE}
 ## attach library
-pacman::p_load("pacman" ,"knitr", "rmarkdown", "rmdformats", "dplyr", "useful.lovetoken")
+pacman::p_load("pacman" ,"knitr", "rmarkdown", "rmdformats", "useful.lovetoken")
 
-## knitr global option
-opts_chunk$set(fig.align = "center", warning = F, cache = F)
-
-## load image
-# load(".RData")
+## global option
+opts_chunk$set(fig.align = "center", warning = F, cache = F, message = F)
 ```
+
+For my self package
 
 # Overview
 
- For my self `useful.lovetoken` package
+제가 자주 사용하는 코드를 간편하게 사용하기 위한 개인적인 패키지 입니다.  
 
-# Install
+* `.rmd` 포맷을 랜더링 한 이후 그 결과를 바로 볼 수 있게 하는 `rendering()`
+* 특정파일 혹은 폴더를 실행하는 `opendf()`
+* Summary 결과를 데이터프레임 형식으로 반환하는 `desc()`
 
-```{r eval=F}
-devtools::install_github("lovetoken/useful.lovetoken")
-```
+등의 함수를 주로 사용하고 있습니다.  
+그외의 간편함수들도 있으며 아래 예제들을 통해 쓰임을 알 수 있습니다.  
 
 # Example
 
-## `window()` function
+## `window()`
+
+경계문제로 인한 indexing 불가시 `window()` 를 이용하여 경계를 초과하는 부분을 절단합니다.
 
 ```{r}
 window(2, c = 3, min = 1, max = 9)
@@ -43,23 +46,62 @@ window(2, c = 3, min = 1, max = 9)
 ```
 
 ```{r}
-window(3, c = 8, min = 1, max = 9)
+window(3, 8, 1, 9)
 
 # 1 2 3 4 5 6 7 8 9  
 #         |-----c-----|
 #         5 6 7 8 9
 ```
 
-## `openfd()` function
-
-open working directory or file
-
-```{r eval=F}
-opendf() # 
-```
-
 ## `desc()` function
+
+Summary 결과를 데이터프레임 형식으로 반환합니다.  
 
 ```{r}
 desc(mtcars)
 ```
+
+## `psum()`
+
+`pmax()`, `pmin()` 등의 함수와 비슷한 쓰임의 parallel 합계를 계산합니다.  
+
+```{r}
+pmin(1:5, 5:1, c(1, NA, 3, 4, 5))
+pmin(1:5, 5:1, c(1, NA, 3, 4, 5), na.rm = T)
+
+psum(1:5, 5:1, c(1, NA, 3, 4, 5))
+psum(1:5, 5:1, c(1, NA, 3, 4, 5), na.rm = T)
+```
+
+## `which_matrix()`
+
+```{r}
+(m <- matrix(sample(c(T,F), 25, T), 5, 5))
+which(m)
+which_matrix(m)
+```
+
+## `NA_paste0()`
+
+`NA`를 문자열로 인식하지 않고 공란으로 `paste0()` 을 수행합니다.
+
+```{r}
+NA_paste0(c(3,6,NA,NA), c(NA,6,9,NA))
+```
+
+```{r}
+A <- "Hello "
+B <- c("world", "world!", NA)
+paste0(A, B)
+NA_paste0(A, B)
+```
+
+# Install
+
+```{r eval=F}
+devtools::install_github("lovetoken/useful.lovetoken")
+```
+
+# License
+
+[GPL-3](https://www.gnu.org/licenses/gpl-3.0.en.html)
