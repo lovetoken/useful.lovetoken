@@ -9,16 +9,16 @@
 
 midpoint <- function(x, ...){
 
-  # pre
+  ## pre
   stopifnot(is.vector(x))
   stopifnot(require(dplyr))
 
-  # content
+  ## content
   x_lead <- lead(x)
   res <- ((x+x_lead)/2) %>% na.omit
   attributes(res) <- NULL
 
-  # return
+  ## return
   return(res)
 
 }

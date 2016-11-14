@@ -7,15 +7,17 @@
 #' rendering()
 
 rendering <- function(...){
-	# pre
+
+  ## pre
 	stopifnot(require(rmarkdown)); stopifnot(require(dplyr))
 
-	# content
+	## content
 	input <- list.files() %>%
-		grep("\\.[rR][mM][dD]$", ., perl=T, value=T)
+		grep("\\.[rR][mM][dD]$", ., perl = T, value = T)
 
 	for(i in input){
 		res <- render(i, encoding = "UTF-8", ...)
 		openfd(res)
 	}
+
 }

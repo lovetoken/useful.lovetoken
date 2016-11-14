@@ -7,10 +7,12 @@
 #' openfd()
 
 openfd <- function(path = NULL){
-	# pre
+
+	## pre
 	if(is.null(path)) r_path <- "." else r_path <- path
 	whatplatform <- .Platform["OS.type"]
 
-	# content
+	## content
 	if(whatplatform == "windows") shell.exec(r_path) else system(paste("open", r_path))
+
 }

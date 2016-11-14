@@ -4,23 +4,18 @@
 #' @seealso \link{paste0}
 #' @export
 #' @examples
-#' ### ex1
-#' NA_paste0(c(3,6,NA,NA), c(NA,6,9,NA))
-#'
-#' ### ex2
 #' A <- "Hello "
 #' B <- c("world", "world!", NA)
 #' paste0(A, B)
-#' NA_paste0(A, B)
+#' paste2(A, B)
 
-NA_paste0 <- function(...){
+paste2 <- function(...){
 
+  ## pre
   stopifnot(require(dplyr))
 
-  # list accesses
+  ## content
   li <- list(...)
-
-  # return
   lapply(li, function(x){
     x[is.na(x)] <- "" ;x
   }) %>%

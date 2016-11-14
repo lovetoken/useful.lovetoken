@@ -1,21 +1,14 @@
 # useful.lovetoken package in R
-lovetoken  
+<a href = "https://lovetoken.github.io">lovetoken</a>  
 `r Sys.Date()`  
+
+<style type="text/css">@import url("https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/yeti/bootstrap.min.css")</style>
 
 
 
 # Overview
 
-R에서 제가 개인적으로 만든 편의함수를 모아놓은 패키지 입니다.  
-
-# Install
-
-R에서 아래의 코드를 이용해 패키지를 설치할 수 있습니다.
-
-
-```r
-devtools::install_github("lovetoken/useful.lovetoken")
-```
+For my self `useful.lovetoken` package
 
 # Example
 
@@ -53,12 +46,11 @@ window(3, c = 8, min = 1, max = 9)
 
 ## `openfd()` function
 
-R console 에서 워킹디렉토리를 직접 실행하여 열 수 있습니다.  
-혹은 특정파일을 여는것도 가능합니다.  
+open working directory or file
 
 
 ```r
-opendf() # open working dir
+opendf() # 
 ```
 
 ## `desc()` function
@@ -66,6 +58,10 @@ opendf() # open working dir
 
 ```r
 desc(mtcars)
+```
+
+```
+## Loading required package: psych
 ```
 
 ```
@@ -82,3 +78,14 @@ desc(mtcars)
 ## gear   10 32   3.69   0.74   4.00  3.00   5.00   2.00
 ## carb   11 32   2.81   1.62   2.00  1.00   8.00   7.00
 ```
+
+# Install
+
+
+```r
+devtools::install_github("lovetoken/useful.lovetoken")
+```
+
+# License
+
+[GPL-3](https://www.gnu.org/licenses/gpl-3.0.en.html)

@@ -1,34 +1,28 @@
 ---
-title: "useful.lovetoken package in R"
-author: "lovetoken"
+title: useful.lovetoken package in R
+author: <a href = "https://lovetoken.github.io">lovetoken</a>
 date: "`r Sys.Date()`"
 output: 
-  rmdformats::readthedown:
-    fig_height: 6
-    fig_width: 6
+  html_document:
+    fig_height: 7
+    toc: yes
+    toc_float: yes
     keep_md: yes
 ---
+
+<style type="text/css">@import url("https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/yeti/bootstrap.min.css")</style>
 
 ```{r My_Rmarkdown_Environment, echo=FALSE, warning=FALSE, message=FALSE}
 ## attach library
 pacman::p_load("pacman" ,"knitr", "rmarkdown", "rmdformats", "dplyr", "useful.lovetoken")
 
-## knitr global option
-opts_chunk$set(fig.align = "center", warning = F, cache = F)
-
-## load image
-# load(".RData")
+## global option
+opts_chunk$set(fig.align = "center", warning = F, cache = F) # for knitr
 ```
 
 # Overview
 
- For my self `useful.lovetoken` package
-
-# Install
-
-```{r eval=F}
-devtools::install_github("lovetoken/useful.lovetoken")
-```
+For my self `useful.lovetoken` package
 
 # Example
 
@@ -63,3 +57,13 @@ opendf() #
 ```{r}
 desc(mtcars)
 ```
+
+# Install
+
+```{r eval=F}
+devtools::install_github("lovetoken/useful.lovetoken")
+```
+
+# License
+
+[GPL-3](https://www.gnu.org/licenses/gpl-3.0.en.html)

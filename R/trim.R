@@ -5,24 +5,18 @@
 #' @param method 잘라내는 방법을 택합니다.
 #' @export
 #' @examples
-#' trim("  Wow!  ", method="leading")
-#' trim("  Wow!  ", method="trailing")
+#' trim("  Wow!  ", "leading")
+#' trim("  Wow!  ", "trailing")
 
-trim <- function(cha, method = "trailing"){
-  # pre
+trim <- function(cha, method = c("leading", "trailing")){
+
+  ## pre
   stopifnot(is.character(cha))
-  stopifnot(method %in% c("leading", "trailing"))
+  method <- match.arg(method)
 
-  # content
-  if(method == "leading"){
+  ## content
+  switch(method,
+         leading = sub("^\\s+", "", cha),
+         trailing = sub("\\s+$", "", cha))
 
-    res <- sub("^\\s+", "", cha)
-
-  } else if(method == "trailing"){
-
-    res <- sub("\\s+$", "", cha)
-
-  }
-
-  return(res)
 }

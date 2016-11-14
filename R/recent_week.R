@@ -11,19 +11,20 @@
 #' recent_weekend(8, as.Date("2000-08-20"))
 
 recent_weekend <- function(recent_day, to = Sys.Date()){
-  # pre
+
+  ## pre
   stopifnot(require(chron)); stopifnot(require(dplyr))
 
-  # content
+  ## content
   vec <- to %>% seq(., .-recent_day*7, by = -1)
   logical <- cumsum(vec %>% is.weekend) == recent_day
   index <- logical %>% which %>% min
   resday <- vec[index]
 
-  # res
+  ## res
   vec <- seq(resday, to, by = 1)
-  res <- vec[vec %>% is.weekend]
-  return(res)
+  vec[vec %>% is.weekend]
+
 }
 
 #' Sequence Date Generation (only Weekday) from recent day
@@ -39,17 +40,18 @@ recent_weekend <- function(recent_day, to = Sys.Date()){
 #' recent_weekday(20, as.Date("2000-08-20"))
 
 recent_weekday <- function(recent_day, to = Sys.Date()){
-  # pre
+
+  ## pre
   stopifnot(require(chron)); stopifnot(require(dplyr))
 
-  # content
+  ## content
   vec <- to %>% seq(., .-recent_day*2, by = -1)
   logical <- cumsum(!vec %>% is.weekend) == recent_day
   index <- logical %>% which %>% min
   resday <- vec[index]
 
-  # res
+  ## res
   vec <- seq(resday, to, by = 1)
-  res <- vec[!vec %>% is.weekend]
-  return(res)
+  vec[!vec %>% is.weekend]
+
 }
