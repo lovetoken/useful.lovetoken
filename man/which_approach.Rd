@@ -6,11 +6,6 @@
 \usage{
 which_approach(x, k)
 }
-\arguments{
-\item{x}{ì°¾ì„ <U+FFFD>€<U+FFFD>ì´ <U+FFFD>˜ëŠ” ë²¡í„°<U+FFFD>€<U+FFFD>…ì„ <U+FFFD>…ë ¥<U+FFFD>©ë‹ˆ<U+FFFD><U+FFFD>.}
-
-\item{k}{ì°¾ì•„<U+FFFD><U+FFFD> <U+FFFD><U+FFFD> ìµœê·¼<U+FFFD>‘ì <U+FFFD><U+FFFD> <U+FFFD>€<U+FFFD><U+FFFD> numeric <U+FFFD>•ë³´ë¥<U+FFFD> <U+FFFD>…ë ¥<U+FFFD>©ë‹ˆ<U+FFFD><U+FFFD>.}
-}
 \description{
 which approach index
 }

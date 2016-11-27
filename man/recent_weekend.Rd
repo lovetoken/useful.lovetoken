@@ -7,15 +7,15 @@
 recent_weekend(recent_day, to = Sys.Date())
 }
 \arguments{
-\item{recent_day}{ëª‡ì¼ì°¨ë<U+FFFD> <U+FFFD>´ê±°<U+FFFD><U+FFFD> ê²ƒì¸ì§€ <U+FFFD>•í•©<U+FFFD>ˆë‹¤. <U+FFFD>°ì´<U+FFFD><U+FFFD> <U+FFFD>•ì‹<U+FFFD>€ <U+FFFD>•ìˆ˜<U+FFFD>´ì–´<U+FFFD><U+FFFD> <U+FFFD>©ë‹ˆ<U+FFFD><U+FFFD>.}
+\item{recent_day}{input integer value}
 
-\item{to}{<U+FFFD>¤ëŠ˜<U+FFFD>¼ìê¸°ì<U+FFFD><U+FFFD><U+FFFD> <U+FFFD>•í•©<U+FFFD>ˆë‹¤. <U+FFFD>°ì´<U+FFFD><U+FFFD> <U+FFFD>•ì‹<U+FFFD>€ Date <U+FFFD>´ì–´<U+FFFD><U+FFFD> <U+FFFD>©ë‹ˆ<U+FFFD><U+FFFD>.}
+\item{to}{recent day. default is \code{Sys.Date()}}
 }
 \value{
-"\%Y-\%m-\%d" <U+FFFD>•ì‹<U+FFFD><U+FFFD> Date <U+FFFD>•ì‹ ë²¡í„°ê°€ ë°˜í™˜<U+FFFD>©ë‹ˆ<U+FFFD><U+FFFD>.
+"\%Y-\%m-\%d" Date class
 }
 \description{
-<U+FFFD>¤ëŠ˜<U+FFFD>¼ìë¥<U+FFFD> ê¸°ì<U+FFFD><U+FFFD>¼ë¡œ ìµœê·¼<U+FFFD>¼ìë¥<U+FFFD> ì£¼ë§ë§Œì„ ë½‘ì•„ <U+FFFD>´ê±°<U+FFFD>©ë‹ˆ<U+FFFD><U+FFFD>.
+Sequence Date Generation (only Weekend) from recent day
 }
 \examples{
 recent_weekend(8)

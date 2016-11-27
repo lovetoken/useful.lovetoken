@@ -17,4 +17,8 @@ data.frame type about assessment result
 \description{
 Ranking assess funds using returns xts dataset & rank plotting
 }
+\examples{
+sample_index \%>\% xdiff_returns(2) \%>\% assess_rank("Fund_2")
+sample_index \%>\% xdiff_returns(2) \%>\% assess_rank("Fund_2", step = T)
+}
 

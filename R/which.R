@@ -1,7 +1,6 @@
 #' which matrix
 #'
 #' which matrix index
-#' @param logical.matrix logical 값이 담긴 matrix type 을 입력 받습니다.
 #' @export
 #' @examples
 #' m <- matrix(sample(c(T,F), 30, T), 5, 6)
@@ -23,15 +22,13 @@ which_matrix <- function(logical.matrix){
   res <- data.frame(row = mapvalues(re, 0, 5), col = (qu+1)-(re == 0))
 
   ## return
-  res
+  return(res)
 
 }
 
 #' which approach
 #'
 #' which approach index
-#' @param x 찾을 대상이 되는 벡터타입을 입력합니다.
-#' @param k 찾아야 할 최근접점에 대한 numeric 정보를 입력합니다.
 #' @export
 #' @examples
 #' x <- runif(100)
@@ -48,6 +45,6 @@ which_approach <- function(x, k){
   res <- abs(x - k) %>% which.min
 
   ## return
-  res
+  return(res)
 
 }

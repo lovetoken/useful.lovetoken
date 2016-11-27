@@ -6,9 +6,6 @@
 \usage{
 which_matrix(logical.matrix)
 }
-\arguments{
-\item{logical.matrix}{logical 값이 <U+FFFD>�긴 matrix type <U+FFFD><U+FFFD> <U+FFFD>�력 받습<U+FFFD>�다.}
-}
 \description{
 which matrix index
 }

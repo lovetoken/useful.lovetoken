@@ -1,6 +1,6 @@
 #' Ignore NA paste function
 #'
-#' 결측치 NA 가 존재할 때, NA를 문자열로 인식하지 않고 공란으로 paste 를 수행합니다.
+#' Ignore NA paste function
 #' @seealso \link{paste0}
 #' @export
 #' @examples

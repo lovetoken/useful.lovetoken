@@ -17,6 +17,6 @@ psum <- function(..., na.rm = F){
   res[idx_na] <- NA
 
   # return
-  res
+  return(res)
 
 }

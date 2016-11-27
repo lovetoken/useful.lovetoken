@@ -7,7 +7,7 @@
 paste2(...)
 }
 \description{
-ê²°ì¸¡ì¹<U+FFFD> NA ê°€ ì¡´ì¬<U+FFFD><U+FFFD> <U+FFFD><U+FFFD>, NAë¥<U+FFFD> ë¬¸ì<U+FFFD>´ë¡œ <U+FFFD>¸ì‹<U+FFFD>˜ì<U+FFFD> <U+FFFD>Šê³  ê³µë<U+FFFD><U+FFFD>¼ë¡œ paste ë¥<U+FFFD> <U+FFFD>˜í–‰<U+FFFD>©ë‹ˆ<U+FFFD><U+FFFD>.
+Ignore NA paste function
 }
 \examples{
 A <- "Hello "

@@ -1,6 +1,6 @@
 #' Color Palettes
 #'
-#' Color Palettes for kyobo
+#' Color Palettes for lovetoken
 #' @param n the number of colors (≥ 1) to be in the palette.
 #' @param alpha	the alpha transparency, a number in [0,1].
 #' @export

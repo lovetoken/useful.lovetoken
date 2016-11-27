@@ -7,8 +7,7 @@
 rendering(...)
 }
 \description{
-rmarkdown <U+FFFD>¨í‚¤ì§€<U+FFFD><U+FFFD> \code{render()} ë¥<U+FFFD> ë³´ë‹¤ <U+FFFD>¸ë¦¬<U+FFFD>˜ê²Œ <U+FFFD>¬ìš©<U+FFFD>˜ëŠ” <U+FFFD>ì†<U+FFFD>¨ìˆ˜ <U+FFFD>…ë‹ˆ<U+FFFD><U+FFFD>.
-<U+FFFD>„ì¬ <U+FFFD>Œí‚¹<U+FFFD>”ë ‰<U+FFFD> ë¦¬<U+FFFD><U+FFFD> <U+FFFD>ˆëŠ” \code{.rmd} <U+FFFD>Œì¼<U+FFFD><U+FFFD> <U+FFFD>ë™<U+FFFD>¼ë¡œ rendering <U+FFFD><U+FFFD> <U+FFFD>´í›„ <U+FFFD>ì„±<U+FFFD><U+FFFD> ê²°ê³¼ë¬¼ì„ ë°”ë¡œ <U+FFFD>¤í–‰<U+FFFD>©ë‹ˆ<U+FFFD><U+FFFD>.
+Open files after rmarkdown::render(..., encoding = "UTF-8") about \code{.rmd} format script.
 }
 \examples{
 rendering()

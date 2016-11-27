@@ -7,13 +7,9 @@
 window(W0, c, min, max)
 }
 \arguments{
-\item{W0}{Bandwidth <U+FFFD>¬ê¸°ë¥<U+FFFD> <U+FFFD>¤ì •<U+FFFD>©ë‹ˆ<U+FFFD><U+FFFD>.}
+\item{W0}{Bandwidth size}
 
-\item{c}{Bandwidth indexing <U+FFFD><U+FFFD> ê¸°ì<U+FFFD><U+FFFD>ì„ <U+FFFD>¤ì •<U+FFFD>©ë‹ˆ<U+FFFD><U+FFFD>.}
-
-\item{min}{ìµœì†Œê²½ê³„ë¥<U+FFFD> ì§€<U+FFFD>•í•©<U+FFFD>ˆë‹¤.}
-
-\item{max}{ìµœë<U+FFFD>ê²½ê³„ë¥<U+FFFD> ì§€<U+FFFD>•í•©<U+FFFD>ˆë‹¤.}
+\item{c}{Bandwidth center point}
 }
 \description{
 Bandwidth indexing with Bound trim

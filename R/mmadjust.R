@@ -21,6 +21,6 @@ mmadjust <- function(x, min = NA, max = NA){
   x[x > max] <- max
 
   ## return
-  x
+  return(x)
 
 }

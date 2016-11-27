@@ -7,12 +7,10 @@
 midpoint(x, ...)
 }
 \arguments{
-\item{x}{ê°€ê³µì˜ <U+FFFD>€<U+FFFD>ì´ <U+FFFD>˜ëŠ” numeric type ë²¡í„°ë¥<U+FFFD> <U+FFFD>…ë ¥<U+FFFD>©ë‹ˆ<U+FFFD><U+FFFD>.}
-
-\item{...}{\code{lead()} <U+FFFD>¨ìˆ˜<U+FFFD><U+FFFD> <U+FFFD>ì† ë¶€ë¶„ì…<U+FFFD>ˆë‹¤.}
+\item{x}{input numeric type vector}
 }
 \description{
-<U+FFFD>¤ìˆ˜ ë²¡í„°<U+FFFD><U+FFFD> <U+FFFD>€<U+FFFD><U+FFFD> midpoint ë¥<U+FFFD> ë°˜í™˜<U+FFFD>©ë‹ˆ<U+FFFD><U+FFFD>.
+returns midpoint values
 }
 \examples{
 midpoint(1:10)

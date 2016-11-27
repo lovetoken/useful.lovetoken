@@ -7,12 +7,12 @@
 trim(cha, method = c("leading", "trailing"))
 }
 \arguments{
-\item{cha}{ê°€ê³µì˜ <U+FFFD>€<U+FFFD>ì´ <U+FFFD>˜ëŠ” character type <U+FFFD>ë£Œë¥<U+FFFD> <U+FFFD>…ë ¥<U+FFFD>©ë‹ˆ<U+FFFD><U+FFFD>.}
+\item{cha}{input character type}
 
-\item{method}{<U+FFFD>˜ë¼<U+FFFD>´ëŠ” ë°©ë²•<U+FFFD><U+FFFD> <U+FFFD>í•©<U+FFFD>ˆë‹¤.}
+\item{method}{trimming method}
 }
 \description{
-ê³µë<U+FFFD>(whitespace)<U+FFFD><U+FFFD> <U+FFFD>˜ë¼<U+FFFD>…ë‹ˆ<U+FFFD><U+FFFD>.
+Trimming of whitespace in character
 }
 \examples{
 trim("  Wow!  ", "leading")

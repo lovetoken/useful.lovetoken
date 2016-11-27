@@ -7,12 +7,12 @@
 lt_col(n, alpha = 1, random = F, ...)
 }
 \arguments{
-\item{n}{the number of colors (<U+FFFD><U+FFFD> 1) to be in the palette.}
+\item{n}{the number of colors (≥ 1) to be in the palette.}
 
 \item{alpha}{the alpha transparency, a number in [0,1].}
 }
 \description{
-Color Palettes for kyobo
+Color Palettes for lovetoken
 }
 \examples{
 (colors1 <- lt_col(9, alpha = .5))

@@ -7,14 +7,10 @@
 bound_trim(vector, min, max)
 }
 \arguments{
-\item{vector}{<U+FFFD>€<U+FFFD>ì´<U+FFFD>˜ëŠ” sequenceë¥<U+FFFD> <U+FFFD>…ë ¥<U+FFFD>©ë‹ˆ<U+FFFD><U+FFFD>. e.g \code{1:100}}
-
-\item{min}{ìµœì†Œê²½ê³„ë¥<U+FFFD> ì§€<U+FFFD>•í•©<U+FFFD>ˆë‹¤. e.g \code{5}}
-
-\item{max}{ìµœë<U+FFFD>ê²½ê³„ë¥<U+FFFD> ì§€<U+FFFD>•í•©<U+FFFD>ˆë‹¤. e.g \code{95}}
+\item{vector}{input sequence. e.g \code{1:100}}
 }
 \description{
-<U+FFFD>¼ë°˜<U+FFFD>˜ì—´<U+FFFD>ì„œ ìµœì†Œì¹˜ì<U+FFFD> ìµœë<U+FFFD>ì¹˜ë<U+FFFD> <U+FFFD>˜ì–´ê°€<U+FFFD><U+FFFD>, <U+FFFD>¼ì¢…<U+FFFD><U+FFFD> ê²½ê³„<U+FFFD> ì„ <U+FFFD>˜ê²¨ë²„ë¦° ê°<U+FFFD> ë§Œì„ <U+FFFD>œì™¸<U+FFFD>œí‚¨ ê²°ê³¼ë¥<U+FFFD> ë°˜í™˜<U+FFFD>©ë‹ˆ<U+FFFD><U+FFFD>.
+Bound trim the sequence vector
 }
 \examples{
 bound_trim(1:100, 5, 95)
