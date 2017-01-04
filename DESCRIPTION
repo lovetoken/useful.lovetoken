@@ -1,12 +1,12 @@
 Package: useful.lovetoken
 Type: Package
 Title: Useful functions for lovetoken
-Version: 0.1.0.0070
+Version: 0.1.0.0080
 Author: HyoJin_Song <lt.lovetoken@gmail.com>
 Maintainer: HyoJin_Song <lt.lovetoken@gmail.com>
 Description: R package for my self
 Depends: R (>= 3.2)
-Imports: plyr, dplyr, chron, rmarkdown, ggplot2, xts, formattable, quadprog, psych
+Imports: plyr, dplyr, chron, rmarkdown, ggplot2, xts, formattable, quadprog, psych, lubridate
 Suggests: quantmod
 RoxygenNote: 5.0.1
 License: GPL-2
