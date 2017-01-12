@@ -1,5 +1,5 @@
 ---
-title: "useful.lovetoken package in R"
+title: "useful.lovetoken package"
 output:
   html_document:
     fig_height: 7
@@ -7,8 +7,6 @@ output:
     toc_float: yes
     keep_md: yes
 ---
-
-<style type="text/css">@import url("https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/yeti/bootstrap.min.css")</style>
 
 ```{r env, echo=F, message=FALSE, warning=FALSE}
 ## load packages
@@ -21,7 +19,7 @@ set.seed(1004)
 
 # Overview
 
-It's a package for me.
+R에서 자주사용하는 사용자 정의 함수를 모은 저만의 패키지 입니다.
 
 # Example
 
@@ -62,6 +60,19 @@ which_matrix(m)
 ```{r}
 trim("  Wow!  ", "leading")
 trim("  Wow!  ", "trailing")
+```
+
+## `swap()`
+
+```{r eval = F}
+x <- 1
+y <- 2
+swap("x", "y")
+cat(x, y)
+```
+
+```
+## 2 1
 ```
 
 # Install
