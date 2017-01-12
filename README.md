@@ -6,7 +6,7 @@
 
 # Overview
 
-It's a package for me.
+자주사용하는 사용자 정의 함수를 모은 저만의 패키지 입니다.
 
 # Example
 
@@ -126,6 +126,20 @@ trim("  Wow!  ", "trailing")
 
 ```
 ## [1] "  Wow!"
+```
+
+## `swap()`
+
+
+```r
+x <- 1
+y <- 2
+swap("x", "y")
+cat(x, y)
+```
+
+```
+## 2 1
 ```
 
 # Install
