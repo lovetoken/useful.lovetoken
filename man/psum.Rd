@@ -18,4 +18,3 @@ Returns the parallel sum of the input values.
 psum(1:5, c(1, 2, 3, 4, NA), c(1, NA, 3, 4, 5))
 psum(1:5, c(1, 2, 3, 4, NA), c(1, NA, 3, 4, 5), na.rm=T)
 }
-

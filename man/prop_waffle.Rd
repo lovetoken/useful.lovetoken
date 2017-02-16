@@ -14,4 +14,3 @@ It displays the proportions in the legend text.
 x <- c("Apple" = 1, "Banana" = 2, "Watermelon" = 3)
 prop_waffle(x, 1, 4, size = 1)
 }
-

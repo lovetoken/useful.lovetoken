@@ -14,4 +14,3 @@ m <- matrix(sample(c(T,F), 30, T), 5, 6)
 which(m)
 which_matrix(m)
 }
-

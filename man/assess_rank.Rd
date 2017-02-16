@@ -21,4 +21,3 @@ Ranking assess funds using returns xts dataset & rank plotting
 sample_index \%>\% xdiff_returns(2) \%>\% assess_rank("Fund_2")
 sample_index \%>\% xdiff_returns(2) \%>\% assess_rank("Fund_2", step = T)
 }
-

@@ -18,4 +18,3 @@ bound_trim(c(1, 5, 9, 10), 0, 9)
 bound_trim(rnorm(100), -1.96, 1.96)
 
 }
-

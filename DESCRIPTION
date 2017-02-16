@@ -8,7 +8,7 @@ Description: R package for my self
 Depends: R (>= 3.2)
 Imports: plyr, dplyr, chron, rmarkdown, ggplot2, xts, formattable, quadprog, psych, lubridate
 Suggests: quantmod
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1
 License: GPL-2
 URL: https://github.com/lovetoken/useful.lovetoken
 LazyData: true

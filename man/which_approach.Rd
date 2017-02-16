@@ -14,4 +14,3 @@ x <- runif(100)
 k <- .5
 which_approach(x, k)
 }
-

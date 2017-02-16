@@ -13,7 +13,7 @@
 #' ror_diff(sample_index, 0:19)
 #' ror_diff(sample_index, 0:19, log.returns = T)
 
-ror_diff <- function(xts, x, log.returns = F, start.omit = T, ...){
+ror_diff <- function(xts, k, log.returns = F, start.omit = T, ...){
   ## pre
   stopifnot(require(dplyr)); stopifnot(require(xts))
 

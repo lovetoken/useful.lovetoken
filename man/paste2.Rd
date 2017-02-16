@@ -18,4 +18,3 @@ paste2(A, B)
 \seealso{
 \link{paste0}
 }
-

@@ -24,4 +24,3 @@ Return of all available portfolio
 returns <- xdiff_returns(sample_index, 1)
 aap(returns, rg = .01, rfr = .001)
 }
-

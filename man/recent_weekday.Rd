@@ -24,4 +24,3 @@ recent_weekday(20, as.Date("2000-08-20"))
 \seealso{
 \link{is.weekend}
 }
-

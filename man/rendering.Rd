@@ -12,4 +12,3 @@ Open files after rmarkdown::render(..., encoding = "UTF-8") about \code{.rmd} fo
 \examples{
 rendering()
 }
-

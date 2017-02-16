@@ -18,4 +18,3 @@ mmadjust(x, .2, .8)
 mmadjust(x, .2)
 mmadjust(x, , .8)
 }
-

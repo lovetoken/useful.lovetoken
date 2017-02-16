@@ -15,4 +15,3 @@ Open the file or directory directly on R console
 \examples{
 openfd()
 }
-

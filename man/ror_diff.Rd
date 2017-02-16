@@ -4,14 +4,14 @@
 \alias{ror_diff}
 \title{Accounting k diff returns}
 \usage{
-ror_diff(xts, x, log.returns = F, start.omit = T, ...)
+ror_diff(xts, k, log.returns = F, start.omit = T, ...)
 }
 \arguments{
 \item{xts}{time series dataset produced by \code{xts}.}
 
-\item{log.returns}{logical asking whether to calculate log returns. Default is \code{FALSE}.}
-
 \item{k}{an integer vector.}
+
+\item{log.returns}{logical asking whether to calculate log returns. Default is \code{FALSE}.}
 }
 \value{
 \code{xts} about returns dataset.
@@ -26,4 +26,3 @@ ror_diff(sample_index, 1, log.returns = T)
 ror_diff(sample_index, 0:19)
 ror_diff(sample_index, 0:19, log.returns = T)
 }
-

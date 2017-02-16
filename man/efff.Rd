@@ -20,4 +20,3 @@ Efficient Frontier using excess returns
 returns <- xdiff_returns(sample_index, x = 1)
 efff(returns, rg = .01, rfr = .001)
 }
-

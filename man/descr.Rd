@@ -20,4 +20,3 @@ mtcars
 descr(mtcars)
 descr(mtcars, c("vars", "n", "mean", "range"))
 }
-

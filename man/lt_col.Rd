@@ -18,4 +18,3 @@ Color Palettes for lovetoken
 (colors1 <- lt_col(9, alpha = .5))
 pie(rep(1, 9), col = colors1, clockwise = T)
 }
-

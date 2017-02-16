@@ -15,4 +15,3 @@ returns midpoint values
 \examples{
 midpoint(1:10)
 }
-

@@ -28,4 +28,3 @@ data <- getSymbols("^ks11", from = Sys.Date() - 1000, to = Sys.Date(), auto.assi
 
 tmplot(data)
 }
-
