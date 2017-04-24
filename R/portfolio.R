@@ -12,7 +12,7 @@ efff <- function(returns, rg = .01, rfr = .001, short = "no", max.allocation = N
                  risk.increment = .0001, plot.only.efff = F, ...){
 
   ## pre
-  stopifnot(require(quadprog)); stopifnot(require(dplyr)); stopifnot(require(ggplot2));
+  stopifnot(require(quadprog)); stopifnot(require(tidyverse)); stopifnot(require(ggplot2));
   stopifnot(is.numeric(rg)); stopifnot(is.numeric(rfr)); stopifnot(is.numeric(risk.premium.up)); stopifnot(is.numeric(risk.increment))
 
   ## content
