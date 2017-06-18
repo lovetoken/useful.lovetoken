@@ -10,6 +10,6 @@ regmatch(pattern, text)
 Match string using Regex patterns
 }
 \examples{
-t <- c("A80", "B09", "C11", "D01", "E")
+t <- c("A80", "B09", "C11", "D01", "E", "f39")
 regmatch("[A-Z]", t)
 }

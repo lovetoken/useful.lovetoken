@@ -3,7 +3,7 @@
 #' Match string using Regex patterns
 #' @export
 #' @examples
-#' t <- c("A80", "B09", "C11", "D01", "E")
+#' t <- c("A80", "B09", "C11", "D01", "E", "f39")
 #' regmatch("[A-Z]", t)
 
 regmatch <- function(pattern, text){
@@ -12,7 +12,7 @@ regmatch <- function(pattern, text){
   stopifnot(require(tidyverse))
 
   ## content
-  res <- regexpr(pattern, text) %>% regmatches(text, .)
-  return(res)
+  m <- gregexpr(pattern, text)
+  return(regmatches(text, m))
 
 }
