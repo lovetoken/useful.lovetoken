@@ -1,6 +1,5 @@
 #' Ignore NA paste function
-#'
-#' Ignore NA paste function
+#' @description Ignore NA paste function
 #' @seealso \link{paste0}
 #' @export
 #' @examples
@@ -11,10 +10,10 @@
 
 paste2 <- function(...){
 
-  ## pre
+  ## Pre
   stopifnot(require(dplyr))
 
-  ## content
+  ## Content
   li <- list(...)
   lapply(li, function(x){
     x[is.na(x)] <- "" ;x

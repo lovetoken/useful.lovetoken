@@ -1,6 +1,5 @@
 #' Adjust min & max
-#'
-#' Adjust min & max about numeric vector
+#' @description Adjust min & max about numeric vector
 #' @param x numeric vector
 #' @param min
 #' @param max
@@ -13,21 +12,20 @@
 
 mmadjust <- function(x, min = NA, max = NA){
 
-  ## pre
+  ## Pre
   stopifnot(is.numeric(x))
 
-  ## content
+  ## Content
   x[x < min] <- min
   x[x > max] <- max
 
-  ## return
+  ## Return
   return(x)
 
 }
 
-#' Range standardization 0 to 1
-#'
-#' Range standardization 0 to 1
+#' Range scaling 0 to 1
+#' @description Range scaling 0 to 1
 #' @param x numeric vector
 #' @export
 #' @examples

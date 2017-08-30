@@ -1,18 +1,14 @@
 #' Match string using Regex patterns
-#'
-#' Match string using Regex patterns
+#' @description Match string out directly
 #' @export
 #' @examples
-#' t <- c("A80", "B09", "C11", "D01", "E", "f39")
-#' regmatch("[A-Z]", t)
+#' t <- c("Ab80", "bU09", "CD11", "DA01", "EW", "fP39")
+#' regmatch("^[A-Z]*", t)
 
-regmatch <- function(pattern, text){
+regmatch <- function(pattern, text, ...){
 
-  ## pre
-  stopifnot(require(tidyverse))
-
-  ## content
+  ## Content
   m <- gregexpr(pattern, text)
-  return(regmatches(text, m))
+  return(unlist(regmatches(text, m)))
 
 }

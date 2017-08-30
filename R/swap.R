@@ -1,6 +1,5 @@
 #' Object swap
-#'
-#' Object swap. (http://rosettacode.org/wiki/Generic_swap#R)
+#' @description Object swapping. (http://rosettacode.org/wiki/Generic_swap#R)
 #' @export
 #' @examples
 #' x <- 1

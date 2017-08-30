@@ -1,6 +1,5 @@
 #' Bound trim the sequence vector
-#'
-#' Bound trim the sequence vector
+#' @description Bound trim the sequence vector
 #' @param vector input sequence. e.g \code{1:100}
 #' @export
 #' @examples
@@ -15,8 +14,7 @@ bound_trim <- function(vector, min, max){
 }
 
 #' Bandwidth indexing with Bound trim
-#'
-#' Bandwidth indexing with Bound trim
+#' @description Bandwidth indexing with Bound trim
 #' @param W0 Bandwidth size
 #' @param c Bandwidth center point
 #' @export
@@ -24,6 +22,4 @@ bound_trim <- function(vector, min, max){
 #' window(10, 0, -20, 20)
 #' window(10, 0, -5, 20)
 #'
-window <- function(W0, c, min, max){
-  return(bound_trim((c-W0):(c+W0), min, max))
-}
+window <- function(W0, c, min, max) return(bound_trim((c-W0):(c+W0), min, max))

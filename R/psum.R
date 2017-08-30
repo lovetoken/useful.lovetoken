@@ -1,6 +1,5 @@
 #' Returns the parallel sum of the input values.
-#'
-#' Returns the parallel sum of the input values.
+#' @description Returns the parallel sum of the input values.
 #' @param ... input values
 #' @param na.rm a logical indicating whether missing values should be removed.
 #' @export
@@ -10,13 +9,13 @@
 
 psum <- function(..., na.rm = F){
 
-  # content
+  # Content
   dat <- do.call(cbind, list(...))
   res <- rowSums(dat, na.rm = na.rm)
   idx_na <- !rowSums(!is.na(dat))
   res[idx_na] <- NA
 
-  # return
+  # Return
   return(res)
 
 }

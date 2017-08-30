@@ -1,6 +1,5 @@
 #' Accounting k diff returns
-#'
-#' Accounting k diff rate of returns
+#' @description Accounting k diff rate of returns
 #' @param xts time series dataset produced by \code{xts}.
 #' @param k an integer vector.
 #' @param log.returns logical asking whether to calculate log returns. Default is \code{FALSE}.
@@ -14,8 +13,9 @@
 #' ror_diff(sample_index, 0:19, log.returns = T)
 
 ror_diff <- function(xts, k, log.returns = F, start.omit = T, ...){
-  ## pre
-  stopifnot(require(dplyr)); stopifnot(require(xts))
+
+  ## Pre
+  stopifnot(require(tidyverse)); stopifnot(require(xts))
 
   nr <- dim(xts)[1]
   nc <- dim(xts)[2]
@@ -52,13 +52,12 @@ ror_diff <- function(xts, k, log.returns = F, start.omit = T, ...){
 
   attr(returns, "k") <- k
 
-  ## return
-  returns
+  ## Return
+  return(returns)
 }
 
 #' Accounting rolling returns
-#'
-#' Accounting rolling rate of returns (years, months, days)
+#' @description Accounting rolling rate of returns (years, months, days)
 #' @param xts time series dataset produced by \code{xts}. Should be satisfied "ymd" term of \code{index(xts)}.
 #' @param k an integer vector.
 #' @return \code{xts} about returns dataset.
@@ -74,10 +73,11 @@ ror_diff <- function(xts, k, log.returns = F, start.omit = T, ...){
 #' ror_d(sample_index2, 50)
 
 ror_y <- function(xts, k){
-  ## pre
+
+  ## Pre
   stopifnot(require(dplyr)); stopifnot(require(xts)); stopifnot(require(lubridate))
 
-  ## content
+  ## Content
   xts <- na.omit(xts)
   cd <- coredata(xts); cd[] <- NA
   resEmptySpace <- xts(cd, index(xts))
@@ -94,18 +94,19 @@ ror_y <- function(xts, k){
   attr(resEmptySpace, "k_years") <- k
   returns <- resEmptySpace
 
-  ## return
-  returns
+  ## Return
+  return(returns)
 }
 
 #' @export
 #' @rdname ror
 
 ror_m <- function(xts, k){
-  ## pre
-  stopifnot(require(dplyr)); stopifnot(require(xts)); stopifnot(require(lubridate))
 
-  ## content
+  ## Pre
+  stopifnot(require(tidyverse)); stopifnot(require(xts)); stopifnot(require(lubridate))
+
+  ## Content
   xts <- na.omit(xts)
   cd <- coredata(xts); cd[] <- NA
   resEmptySpace <- xts(cd, index(xts))
@@ -122,18 +123,19 @@ ror_m <- function(xts, k){
   attr(resEmptySpace, "k_months") <- k
   returns <- resEmptySpace
 
-  ## return
-  returns
+  ## Return
+  return(returns)
 }
 
 #' @export
 #' @rdname ror
 
 ror_d <- function(xts, k){
-  ## pre
-  stopifnot(require(dplyr)); stopifnot(require(xts)); stopifnot(require(lubridate))
 
-  ## content
+  ## Pre
+  stopifnot(require(tidyverse)); stopifnot(require(xts)); stopifnot(require(lubridate))
+
+  ## Content
   xts <- na.omit(xts)
   cd <- coredata(xts); cd[] <- NA
   resEmptySpace <- xts(cd, index(xts))
@@ -150,6 +152,6 @@ ror_d <- function(xts, k){
   attr(resEmptySpace, "k_days") <- k
   returns <- resEmptySpace
 
-  ## return
-  returns
+  ## Return
+  return(returns)
 }

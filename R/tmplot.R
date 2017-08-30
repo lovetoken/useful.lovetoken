@@ -1,6 +1,5 @@
 #' ts and moving average plot for all fund items
-#'
-#' ts and (three lines) moving average plot for all fund items
+#' @description ts and (three lines) moving average plot for all fund items
 #' @param xts an \code{xts} object
 #' @param mv moving average parameters
 #' @param plotly logical asking whether to using plotly class plotting
@@ -16,14 +15,14 @@
 
 tmplot <- function(xts, mv = c(20, 60, 120), ...){
 
-  ## pre
-  stopifnot(require(dplyr)); stopifnot(require(xts)); stopifnot(require(ggplot2)); stopifnot(require(reshape2))
+  ## Pre
+  stopifnot(require(tidyverse)); stopifnot(require(xts)); stopifnot(require(ggplot2)); stopifnot(require(reshape2))
   stopifnot(is.numeric(mv))
 
   mv <- as.integer(mv)
   mv1 <- mv[1]; mv2 <- mv[2]; mv3 <- mv[3]
 
-  ## content
+  ## Content
   pd1 <- xts %>%
     coredata %>%
     data.frame(Index = index(xts)) %>%
@@ -59,14 +58,13 @@ tmplot <- function(xts, mv = c(20, 60, 120), ...){
     facet_grid(variable ~ ., scales = "free", ...) +
     labs(x = "", y = "")
 
-  ## return
-  p
+  ## Return
+  return(p)
 
 }
 
 #' ts and moving average plot for single fund item
-#'
-#' ts and moving average plot for single fund item
+#' @description ts and moving average plot for single fund item
 #' @param xts
 #' @param choice.stock
 #' @param mv

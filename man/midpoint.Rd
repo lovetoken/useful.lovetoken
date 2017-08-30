@@ -2,7 +2,7 @@
 % Please edit documentation in R/midpoint.R
 \name{midpoint}
 \alias{midpoint}
-\title{midpoint values}
+\title{Midpoint values}
 \usage{
 midpoint(x, ...)
 }

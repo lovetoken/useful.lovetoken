@@ -1,6 +1,5 @@
 #' which matrix
-#'
-#' which matrix index
+#' @description which matrix index
 #' @export
 #' @examples
 #' m <- matrix(sample(c(T,F), 30, T), 5, 6)
@@ -9,11 +8,11 @@
 
 which_matrix <- function(logical.matrix){
 
-  ## pre
-  stopifnot(require(plyr))
+  ## Pre
+  stopifnot(require(tidyverse))
   stopifnot(is.matrix(logical.matrix))
 
-  ## content
+  ## Content
   index <- which(logical.matrix)
   nr <- nrow(logical.matrix)
   qu <- index %/% nr
@@ -21,14 +20,13 @@ which_matrix <- function(logical.matrix){
 
   res <- data.frame(row = mapvalues(re, 0, 5), col = (qu+1)-(re == 0))
 
-  ## return
+  ## Return
   return(res)
 
 }
 
 #' which approach
-#'
-#' which approach index
+#' @description which approach index
 #' @export
 #' @examples
 #' x <- runif(100)
@@ -37,14 +35,14 @@ which_matrix <- function(logical.matrix){
 
 which_approach <- function(x, k){
 
-  ## pre
-  stopifnot(require(dplyr))
+  ## Pre
+  stopifnot(require(tidyverse))
   stopifnot(is.vector(x)); stopifnot(is.numeric(k))
 
-  ## content
+  ## Content
   res <- abs(x - k) %>% which.min
 
-  ## return
+  ## Return
   return(res)
 
 }

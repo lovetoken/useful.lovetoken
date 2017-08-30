@@ -4,7 +4,7 @@
 \alias{rendering}
 \title{Open files after rmarkdown::render()}
 \usage{
-rendering(...)
+rendering(pattern = NULL, ...)
 }
 \description{
 Open files after rmarkdown::render(..., encoding = "UTF-8") about \code{.rmd} format script.

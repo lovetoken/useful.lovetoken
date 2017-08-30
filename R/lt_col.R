@@ -1,6 +1,5 @@
 #' Color Palettes
-#'
-#' Color Palettes for lovetoken
+#' @description Color Palettes for lovetoken
 #' @param n the number of colors (≥ 1) to be in the palette.
 #' @param alpha	the alpha transparency, a number in [0,1].
 #' @export
@@ -10,7 +9,7 @@
 
 lt_col <- function(n, alpha = 1, random = F, ...){
 
-	## pre
+	## Pre
 	n <- as.integer(n)
 
 	pal <- c(
@@ -27,7 +26,7 @@ lt_col <- function(n, alpha = 1, random = F, ...){
 
 	if(random) pal <- sample(pal)
 
-	## return
+	## Return
 	rep(pal, length = n)
 
 }

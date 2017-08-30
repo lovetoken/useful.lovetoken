@@ -1,6 +1,5 @@
-#' midpoint values
-#'
-#' returns midpoint values
+#' Midpoint values
+#' @description returns midpoint values
 #' @param x input numeric type vector
 #' @export
 #' @examples
@@ -8,16 +7,16 @@
 
 midpoint <- function(x, ...){
 
-  ## pre
+  ## Pre
   stopifnot(is.vector(x))
-  stopifnot(require(dplyr))
+  stopifnot(require(tidyverse))
 
   ## content
   x_lead <- lead(x)
   res <- ((x+x_lead)/2) %>% na.omit
   attributes(res) <- NULL
 
-  ## return
+  ## Return
   return(res)
 
 }

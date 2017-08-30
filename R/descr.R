@@ -1,6 +1,5 @@
 #' Describe dataset using psych::describe() function
-#'
-#' Alias function of \code{psych::describe()}
+#' @description Alias function of \code{psych::describe()}
 #' @param x A data frame or matrix
 #' @param choice
 #' @param ... Arguments to be passed to \code{psych::describe()}
@@ -12,14 +11,14 @@
 
 descr <- function(x, choice=c("vars", "n", "mean", "sd", "median", "min", "max", "range"), ...){
 
-  ## pre
+  ## Pre
 	stopifnot(require(psych))
 
-	## content
+	## Content
 	bres <- describe(x, ...)
 	res <- bres[names(bres) %in% choice]
 
-	## return
+	## Return
 	return(res)
 
 }

@@ -7,8 +7,7 @@
 prop_waffle(x, rounding = 1, ...)
 }
 \description{
-This function that transforms the \code{waffle::waffle()}.
-It displays the proportions in the legend text.
+This function that transforms the \code{waffle::waffle()}. It displays the proportions in the legend text.
 }
 \examples{
 x <- c("Apple" = 1, "Banana" = 2, "Watermelon" = 3)

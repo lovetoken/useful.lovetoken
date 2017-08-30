@@ -1,6 +1,5 @@
 #' Efficient Frontier
-#'
-#' Efficient Frontier using excess returns
+#' @description Efficient Frontier using excess returns
 #' @param returns xts or zoo value
 #' @param rg numeric value, returns of goal
 #' @export
@@ -11,11 +10,11 @@
 efff <- function(returns, rg = .01, rfr = .001, short = "no", max.allocation = NULL, risk.premium.up = .9,
                  risk.increment = .0001, plot.only.efff = F, ...){
 
-  ## pre
+  ## Pre
   stopifnot(require(quadprog)); stopifnot(require(tidyverse)); stopifnot(require(ggplot2));
   stopifnot(is.numeric(rg)); stopifnot(is.numeric(rfr)); stopifnot(is.numeric(risk.premium.up)); stopifnot(is.numeric(risk.increment))
 
-  ## content
+  ## Content
   returns <- returns - rfr
   covariance <- cov(returns)
   nc <- ncol(covariance)
@@ -58,13 +57,13 @@ efff <- function(returns, rg = .01, rfr = .001, short = "no", max.allocation = N
 
   pool <- as.data.frame(eff)
 
-  ### choice portfolios
+  ## Choice portfolios
   res <- pool[c(which.max(pool$Sharpe), which.min((pool$Excess_Return - rg)^2)), ]
   rownames(res) <- c("Market", "Return of goal")
   res["Theoretically Return of goal",] <- res["Market", ] * rg/res["Market", "Excess_Return"]
   res["Theoretically Return of goal", "Sharpe"] <- res["Theoretically Return of goal","Excess_Return"] / res["Theoretically Return of goal","Std_Dev"]
 
-  ### ploting
+  ## Ploting
   pd1 <- descr(returns, c("mean", "sd")) %>% tbl_df %>%
     mutate(labels = rownames(.)) %>% rename(Excess_Return = mean, Std_Dev = sd)
 
@@ -76,7 +75,7 @@ efff <- function(returns, rg = .01, rfr = .001, short = "no", max.allocation = N
     labs(title = paste0("Efficient Frontier (rfr = ", rfr, ")"), color = "") +
     theme(plot.title = element_text(size = rel(1.4)))
 
-  ## return
+  ## Return
   print(p)
   attr(res, "poolset") <- pool %>% tbl_df
   attr(res, "plot") <- p
@@ -85,8 +84,7 @@ efff <- function(returns, rg = .01, rfr = .001, short = "no", max.allocation = N
 }
 
 #' All available portfolio
-#'
-#' Return of all available portfolio
+#' @description Return of all available portfolio
 #' @param returns xts or zoo value
 #' @param rg goal of returns
 #' @param rfr risk free rate
@@ -99,11 +97,11 @@ efff <- function(returns, rg = .01, rfr = .001, short = "no", max.allocation = N
 
 aap <- function(returns, rg = .01, rfr = .001, precision = .01, mirc = 1, ...){
 
-  ## pre
-  stopifnot(require(dplyr)); stopifnot(require(xts)); stopifnot(require(dplyr)); stopifnot(require(ggplot2)); stopifnot(require(formattable))
+  ## Pre
+  stopifnot(require(xts)); stopifnot(require(tidyverse)); stopifnot(require(ggplot2)); stopifnot(require(formattable))
   stopifnot(is.numeric(precision)); stopifnot(is.numeric(rfr)); stopifnot(is.numeric(rg)); stopifnot(is.numeric(mirc))
 
-  ## content
+  ## Content
   returns <- returns - rfr
   nc <- dim(returns)[2]
 
@@ -132,7 +130,7 @@ aap <- function(returns, rg = .01, rfr = .001, precision = .01, mirc = 1, ...){
   res["Theoretically Return of goal",] <- res["Market", ] * rg/res["Market", "Excess_Return"]
   res["Theoretically Return of goal", "Sharpe"] <- res["Theoretically Return of goal", "Excess_Return"] / res["Theoretically Return of goal", "Std_Dev"]
 
-  ### ploting
+  ### Ploting
   pd1 <- descr(returns, c("mean", "sd")) %>% tbl_df %>%
     mutate(labels = rownames(.)) %>% rename(Excess_Return = mean, Std_Dev = sd)
 
@@ -144,7 +142,7 @@ aap <- function(returns, rg = .01, rfr = .001, precision = .01, mirc = 1, ...){
     labs(title = paste0("All available portfolio (rfr = ", rfr, ")"), color = "") +
     theme(plot.title = element_text(size = rel(1.4)))
 
-  ## return
+  ## Return
   print(p)
   attr(res, "poolset") <- pool %>% tbl_df
   attr(res, "plot") <- p

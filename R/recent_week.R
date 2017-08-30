@@ -1,6 +1,5 @@
 #' Sequence Date Generation (only Weekend) from recent day
-#'
-#' Sequence Date Generation (only Weekend) from recent day
+#' @description Sequence Date Generation (only Weekend) from recent day
 #' @param to recent day. default is \code{Sys.Date()}
 #' @param recent_day input integer value
 #' @return "\%Y-\%m-\%d" Date class
@@ -12,24 +11,23 @@
 
 recent_weekend <- function(recent_day, to = Sys.Date()){
 
-  ## pre
-  stopifnot(require(chron)); stopifnot(require(dplyr))
+  ## Pre
+  stopifnot(require(chron)); stopifnot(require(tidyverse))
 
-  ## content
+  ## Content
   vec <- to %>% seq(., .-recent_day*7, by = -1)
   logical <- cumsum(vec %>% is.weekend) == recent_day
   index <- logical %>% which %>% min
   resday <- vec[index]
 
-  ## res
+  ## Res
   vec <- seq(resday, to, by = 1)
   vec[vec %>% is.weekend]
 
 }
 
 #' Sequence Date Generation (only Weekday) from recent day
-#'
-#' Sequence Date Generation (only Weekday) from recent day
+#' @description Sequence Date Generation (only Weekday) from recent day
 #' @param to recent day. default is \code{Sys.Date()}
 #' @param recent_day input integer value
 #' @return "\%Y-\%m-\%d" Date class
@@ -41,16 +39,16 @@ recent_weekend <- function(recent_day, to = Sys.Date()){
 
 recent_weekday <- function(recent_day, to = Sys.Date()){
 
-  ## pre
-  stopifnot(require(chron)); stopifnot(require(dplyr))
+  ## Pre
+  stopifnot(require(chron)); stopifnot(require(tidyverse))
 
-  ## content
+  ## Content
   vec <- to %>% seq(., .-recent_day*2, by = -1)
   logical <- cumsum(!vec %>% is.weekend) == recent_day
   index <- logical %>% which %>% min
   resday <- vec[index]
 
-  ## res
+  ## Res
   vec <- seq(resday, to, by = 1)
   vec[!vec %>% is.weekend]
 

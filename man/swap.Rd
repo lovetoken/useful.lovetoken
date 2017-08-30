@@ -7,7 +7,7 @@
 swap(name1, name2, envir = parent.env(environment()))
 }
 \description{
-Object swap. (http://rosettacode.org/wiki/Generic_swap#R)
+Object swapping. (http://rosettacode.org/wiki/Generic_swap#R)
 }
 \examples{
 x <- 1

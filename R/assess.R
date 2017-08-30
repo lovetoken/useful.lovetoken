@@ -1,6 +1,5 @@
 #' Ranking assess funds using returns xts dataset
-#'
-#' Ranking assess funds using returns xts dataset & rank plotting
+#' @description Ranking assess funds using returns xts dataset & rank plotting
 #' @param returns.xts an \code{xts} object about returns dataset
 #' @param method returns mean or sd or Sharpe ratio
 #' @return data.frame type about assessment result
@@ -11,10 +10,10 @@
 
 assess_rank <- function(returns.xts, choice.stock, step = F, ...){
 
-  ## pre
+  ## Pre
   stopifnot(require(dplyr)); stopifnot(require(xts)); stopifnot(require(ggplot2))
 
-  ## content
+  ## Content
   rank_output <- apply(returns.xts, 1, function(x) rank(-x, ties.method = "max", na.last = "keep")) %>% t
   length <- apply(rank_output, 1, function(x) max(x, na.rm = T))
   pd <- as.data.frame(cbind(subset(rank_output, select = choice.stock), length))
@@ -26,7 +25,7 @@ assess_rank <- function(returns.xts, choice.stock, step = F, ...){
     }, error = function(e) print("all NA")
   )
 
-  ## plotting
+  ## Plotting
   p <- ggplot(pd, aes(x = row.names(pd), y = rank, group = NA, label = label))
 
   if(step){
@@ -45,7 +44,7 @@ assess_rank <- function(returns.xts, choice.stock, step = F, ...){
 
   names(pd)[1] <- paste0(choice.stock, "_rank")
 
-  ## res
+  ## Res
   print(p)
   attr(pd, "plot") <- p
   return(pd)

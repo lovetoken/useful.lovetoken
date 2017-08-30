@@ -2,7 +2,7 @@
 % Please edit documentation in R/adjust.R
 \name{range01}
 \alias{range01}
-\title{Range standardization 0 to 1}
+\title{Range scaling 0 to 1}
 \usage{
 range01(x, ...)
 }
@@ -10,7 +10,7 @@ range01(x, ...)
 \item{x}{numeric vector}
 }
 \description{
-Range standardization 0 to 1
+Range scaling 0 to 1
 }
 \examples{
 x <- c(0, 4, 7, 9, 10)
