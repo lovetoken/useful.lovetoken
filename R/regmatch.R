@@ -2,13 +2,22 @@
 #' @description Match string out directly
 #' @export
 #' @examples
-#' t <- c("Ab80", "bU09", "CD11", "DA01", "EW", "fP39")
-#' regmatch("^[A-Z]*", t)
+#' t <- c("Ab80", "bU09", "CC11", "D0A1", "EW19", "fp39")
+#' regmatch("[A-Z]", t)
+#' regmatch("[A-Z]", t, global = T)
 
-regmatch <- function(pattern, text, ...){
+regmatch <- function(pattern, text, global = F, ...){
 
-  ## Content
-  m <- gregexpr(pattern, text)
-  return(unlist(regmatches(text, m)))
+  ## content
+  if(global){
+    m <- gregexpr(pattern, text, ...)
+    res <- regmatches(text, m)
+  }
 
+  if(global == F){
+    m <- regexpr(pattern, text, ...)
+    res <- regmatches(text, m)
+  }
+
+  return(res)
 }
