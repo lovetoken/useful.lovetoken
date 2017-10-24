@@ -34,5 +34,5 @@ source.rmd <- function(file, ...) {
   stopifnot(require(knitr))
 
   ## Content
-  source(purl(x, output = tempfile()), ...)
+  source(purl(file), ...)
 }
