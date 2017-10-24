@@ -22,3 +22,17 @@ rendering <- function(pattern = NULL, ...){
 	}
 
 }
+
+#' Code run about .rmd
+#' @description \code{.rmd} 를 소스코드로 변환 후 (\code{purl()}에 의하여) R script 를 실행합니다.
+#' @export
+#' @examples
+#'
+source.rmd <- function(file, ...) {
+
+  ## Pre
+  stopifnot(require(knitr))
+
+  ## Content
+  source(purl(x, output = tempfile()), ...)
+}
