@@ -24,7 +24,7 @@ rendering <- function(pattern = NULL, ...){
 }
 
 #' Code run about .rmd
-#' @description \code{.rmd} 를 소스코드로 변환 후 (\code{purl()}에 의하여) R script 를 실행합니다.
+#' @description \code{knitr::purl()}에 의하여 \code{.rmd} 스크립트를 R 스크립트로 변환 후 실행합니다.
 #' @export
 #' @examples
 #'

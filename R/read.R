@@ -17,7 +17,7 @@ read_svf <- function(file, ...){
 }
 
 #' Write .rda about separated values file
-#' @description 구분자로 분리된 외부테이블 파일을 import 한 후 .rda 형태로 모두 변환하여 저장합니다. 객체명은 \code{rawdata} 로 저장됩니다.
+#' @description 구분자로 분리된 외부테이블 파일을 import 한 후 .rda 형태로 변환 및 압축하여 저장합니다. 객체명은 \code{rawdata} 로 저장됩니다.
 #' @param path a character vector; file paths
 #' @export
 #' @examples
@@ -30,7 +30,7 @@ svf2rda <- function(file, ...){
   ## Content
   for(i in file){
     rawdata <- read_svf(i, trim_ws = T, ...)
-    save(rawdata, file = gsub("\\.(txt|csv)$", ".rda", i))
+    save(rawdata, file = gsub("\\.(txt|csv)$", ".rda", i), compress = T)
   }
 
 }
