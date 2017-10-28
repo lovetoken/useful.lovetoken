@@ -30,7 +30,7 @@ svf2rda <- function(file, ...){
   ## Content
   for(i in file){
     rawdata <- read_svf(i, trim_ws = T, ...)
-    save(rawdata, file = gsub("\\.(txt|csv)$", ".rda", i), compress = T)
+    save(rawdata, file = gsub("\\..*$", ".rda", i), compress = T) # !! : 뒷부분 확장명을 대치시키는 로직을 더 개선시켜야함
   }
 
 }
