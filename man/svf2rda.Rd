@@ -10,5 +10,8 @@ svf2rda(file, ...)
 \item{path}{a character vector; file paths}
 }
 \description{
-구분자로 분리된 외부테이블 파일을 import 한 후 .rda 형태로 변환 및 압축하여 저장합니다. 객체명은 \code{rawdata} 로 저장됩니다.
+구분자로 분리된 외부테이블 파일을 import 한 후 .rda 형태로 변환 및 압축하여 저장합니다. 객체명은 \code{rawdata} 로 저장됩니다. 저장되는 위치는 원본 외부테이블 파일이 있는 디렉토리입니다.
+}
+\examples{
+svf2rda("data/hangle.csv", ",")
 }
