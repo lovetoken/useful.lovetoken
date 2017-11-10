@@ -25,14 +25,18 @@ rendering <- function(pattern = NULL, ...){
 
 #' Code run about .rmd
 #' @description \code{knitr::purl()}에 의하여 \code{.rmd} 스크립트를 R 스크립트로 변환 후 실행합니다.
+#' @param delete 순수한 R 스크립트 기본적으로 반환되나 필요하지 않을 경우 \code{delete = T} 로 설정하여 지울 수 있습니다.
 #' @export
 #' @examples
 #'
-source.rmd <- function(file, ...) {
+source.rmd <- function(file, delete = F, ...) {
 
   ## Pre
   stopifnot(require(knitr))
 
   ## Content
-  source(purl(file), ...)
+  rcode <- purl(file)
+  source(rcode, ...)
+  if(delete) file.remove(rcode)
+
 }

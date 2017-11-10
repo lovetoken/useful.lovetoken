@@ -4,7 +4,10 @@
 \alias{source.rmd}
 \title{Code run about .rmd}
 \usage{
-source.rmd(file, ...)
+source.rmd(file, delete = F, ...)
+}
+\arguments{
+\item{delete}{순수한 R 스크립트 기본적으로 반환되나 필요하지 않을 경우 \code{delete = T} 로 설정하여 지울 수 있습니다.}
 }
 \description{
 \code{knitr::purl()}에 의하여 \code{.rmd} 스크립트를 R 스크립트로 변환 후 실행합니다.
