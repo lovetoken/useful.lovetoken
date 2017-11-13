@@ -29,7 +29,7 @@ rendering <- function(pattern = NULL, ...){
 #' @export
 #' @examples
 #'
-source.rmd <- function(file, delete = F, ...) {
+source.rmd <- function(file, delete = T, ...) {
 
   ## Pre
   stopifnot(require(knitr))

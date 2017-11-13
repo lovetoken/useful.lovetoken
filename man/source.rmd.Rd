@@ -4,7 +4,7 @@
 \alias{source.rmd}
 \title{Code run about .rmd}
 \usage{
-source.rmd(file, delete = F, ...)
+source.rmd(file, delete = T, ...)
 }
 \arguments{
 \item{delete}{순수한 R 스크립트 기본적으로 반환되나 필요하지 않을 경우 \code{delete = T} 로 설정하여 지울 수 있습니다.}
