@@ -31,7 +31,7 @@ svf2rda <- function(file, ...){
   ## Content
   for(i in file){
     rawdata <- read_svf(i, trim_ws = T, ...) # TODO : object name 을 assign() function 을 이용해 선택할 수 있는 기능이 필요할듯
-    save(rawdata, file = gsub("\\..*$", ".rda", i), compress = T) # TODO : 뒷부분 확장명을 대치시키는 로직을 더 개선시켜야함
+    save(rawdata, file = paste0(i, ".rda"), compress = T)
   }
 
 }
