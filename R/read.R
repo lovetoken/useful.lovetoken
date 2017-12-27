@@ -17,40 +17,43 @@ read_svf <- function(file, ...){
 }
 
 #' Write .rda about separated values file
-#' @description 구분자로 분리된 외부테이블 파일을 import 한 후 .rda 형태로 변환 및 압축하여 저장합니다. 객체명은 \code{rawdata} 로 저장됩니다. 저장되는 위치는 원본 외부테이블 파일이 있는 디렉토리입니다.
-#' @param path a character vector; file paths
+#' @description 구분자로 분리된 외부테이블 파일을 import 한 후 .rda 형태로 변환하여 저장합니다. 객체명은 \code{rawdata} 로 저장됩니다.
+#' @param x a character vector; file paths
+#' @param file a connection or the name of the file where the data will be saved. if null same \code{x} paths as save name after pasted \code{.rda}
 #' @export
+#' @return \code{file} 로 .rda 파일이 저장되며, 이를 로드할 때 \code{rawdata} 객체가 반환됩니다.
 #' @examples
-#' svf2rda("data/hangle.csv", ",")
+#' svf2rda("data/hangle.csv", "data/hangle.rda", delim = ",")
 
-svf2rda <- function(file, ...){
+svf2rda <- function(x, file = NULL, ...){
 
   ## Pre
   stopifnot(require(tidyverse))
 
   ## Content
-  for(i in file){
+  for(i in x){
     rawdata <- read_svf(i, trim_ws = T, ...) # TODO : object name 을 assign() function 을 이용해 선택할 수 있는 기능이 필요할듯
-    save(rawdata, file = paste0(i, ".rda"), compress = T)
+    save(rawdata, file = if(is.null(file)) paste0(x, ".rda") else file, compress = T)
   }
 
 }
 
 #' Write .rds about separated values file
-#' @description 구분자로 분리된 외부테이블 파일을 import 한 후 .rds 형태로 변환 및 압축하여 저장합니다. 저장되는 위치는 원본 외부테이블 파일이 있는 디렉토리입니다.
-#' @param path a character vector; file paths
+#' @description 구분자로 분리된 외부테이블 파일을 import 한 후 .rds 형태로 변환하여 저장합니다. 저장되는 위치는 원본 외부테이블 파일이 있는 디렉토리입니다.
+#' @param x a character vector; file paths
+#' @param file a connection or the name of the file where the data will be saved. if null same \code{x} paths as save name after pasted \code{.rds}
 #' @export
 #' @examples
 
-svf2rds <- function(file, ...){
+svf2rds <- function(x, file = NULL, ...){
 
   ## Pre
   stopifnot(require(tidyverse))
 
   ## Content
-  for(i in file){
+  for(i in x){
     rawdata <- read_svf(i, trim_ws = T, ...)
-    saveRDS(rawdata, file = gsub("\\..*$", ".rds", i)) # TODO : 뒷부분 확장명을 대치시키는 로직을 더 개선시켜야함
+    saveRDS(rawdata, file = if(is.null(file)) paste0(x, ".rda") else file, compress = T)
   }
 
 }

@@ -4,14 +4,19 @@
 \alias{svf2rda}
 \title{Write .rda about separated values file}
 \usage{
-svf2rda(file, ...)
+svf2rda(x, file = NULL, ...)
 }
 \arguments{
-\item{path}{a character vector; file paths}
+\item{x}{a character vector; file paths}
+
+\item{file}{a connection or the name of the file where the data will be saved. if null same \code{x} paths as save name after pasted \code{.rda}}
+}
+\value{
+\code{file} 로 .rda 파일이 저장되며, 이를 로드할 때 \code{rawdata} 객체가 반환됩니다.
 }
 \description{
-구분자로 분리된 외부테이블 파일을 import 한 후 .rda 형태로 변환 및 압축하여 저장합니다. 객체명은 \code{rawdata} 로 저장됩니다. 저장되는 위치는 원본 외부테이블 파일이 있는 디렉토리입니다.
+구분자로 분리된 외부테이블 파일을 import 한 후 .rda 형태로 변환하여 저장합니다. 객체명은 \code{rawdata} 로 저장됩니다.
 }
 \examples{
-svf2rda("data/hangle.csv", ",")
+svf2rda("data/hangle.csv", "data/hangle.rda", delim = ",")
 }

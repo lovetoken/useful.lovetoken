@@ -4,11 +4,13 @@
 \alias{svf2rds}
 \title{Write .rds about separated values file}
 \usage{
-svf2rds(file, ...)
+svf2rds(x, file = NULL, ...)
 }
 \arguments{
-\item{path}{a character vector; file paths}
+\item{x}{a character vector; file paths}
+
+\item{file}{a connection or the name of the file where the data will be saved. if null same \code{x} paths as save name after pasted \code{.rds}}
 }
 \description{
-구분자로 분리된 외부테이블 파일을 import 한 후 .rds 형태로 변환 및 압축하여 저장합니다. 저장되는 위치는 원본 외부테이블 파일이 있는 디렉토리입니다.
+구분자로 분리된 외부테이블 파일을 import 한 후 .rds 형태로 변환하여 저장합니다. 저장되는 위치는 원본 외부테이블 파일이 있는 디렉토리입니다.
 }
