@@ -11,16 +11,13 @@
 
 recent_weekend <- function(recent_day, to = Sys.Date()){
 
-  ## Pre
   stopifnot(require(chron)); stopifnot(require(tidyverse))
 
-  ## Content
   vec <- to %>% seq(., .-recent_day*7, by = -1)
   logical <- cumsum(vec %>% is.weekend) == recent_day
   index <- logical %>% which %>% min
   resday <- vec[index]
 
-  ## Res
   vec <- seq(resday, to, by = 1)
   vec[vec %>% is.weekend]
 
@@ -39,16 +36,13 @@ recent_weekend <- function(recent_day, to = Sys.Date()){
 
 recent_weekday <- function(recent_day, to = Sys.Date()){
 
-  ## Pre
   stopifnot(require(chron)); stopifnot(require(tidyverse))
 
-  ## Content
   vec <- to %>% seq(., .-recent_day*2, by = -1)
   logical <- cumsum(!vec %>% is.weekend) == recent_day
   index <- logical %>% which %>% min
   resday <- vec[index]
 
-  ## Res
   vec <- seq(resday, to, by = 1)
   vec[!vec %>% is.weekend]
 

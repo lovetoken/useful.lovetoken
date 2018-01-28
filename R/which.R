@@ -8,19 +8,15 @@
 
 which_matrix <- function(logical.matrix){
 
-  ## Pre
-  stopifnot(require(tidyverse))
-  stopifnot(is.matrix(logical.matrix))
+  stopifnot(is.matrix(logical.matrix), require(tidyverse))
 
-  ## Content
   index <- which(logical.matrix)
   nr <- nrow(logical.matrix)
   qu <- index %/% nr
   re <- index %% nr
 
-  res <- data.frame(row = mapvalues(re, 0, 5), col = (qu+1)-(re == 0))
+  res <- data.frame(row = mapvalues(re, 0, 5), col = (qu + 1) - (re == 0))
 
-  ## Return
   return(res)
 
 }
@@ -35,14 +31,9 @@ which_matrix <- function(logical.matrix){
 
 which_approach <- function(x, k){
 
-  ## Pre
-  stopifnot(require(tidyverse))
-  stopifnot(is.vector(x)); stopifnot(is.numeric(k))
+  stopifnot(is.vector(x), is.numeric(k), require(tidyverse))
 
-  ## Content
   res <- abs(x - k) %>% which.min
-
-  ## Return
   return(res)
 
 }

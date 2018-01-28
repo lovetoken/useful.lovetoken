@@ -5,10 +5,8 @@
 
 missmap2 <- function(x, only_miss_var = F){
 
-  ## Pre
-  stopifnot(require(ggplot2)); stopifnot(require(reshape2)); stopifnot(require(tidyverse))
+  stopifnot(require(ggplot2), require(reshape2), require(tidyverse))
 
-  ## Content
   meltData <- x %>%
     is.na %>%
     melt %>%

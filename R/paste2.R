@@ -10,10 +10,8 @@
 
 paste2 <- function(...){
 
-  ## Pre
   stopifnot(require(dplyr))
 
-  ## Content
   li <- list(...)
   lapply(li, function(x){
     x[is.na(x)] <- "" ;x

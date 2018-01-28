@@ -5,14 +5,11 @@
 
 read_svf <- function(file, ...){
 
-  ## Pre
   stopifnot(require(tidyverse))
 
-  ## Content
   guessed <- guess_encoding(file)[1, 1] %>% as.character
   res <- read_delim(file, locale = locale(encoding = guessed), ...)
 
-  ## Return
   return(res)
 }
 
@@ -27,10 +24,8 @@ read_svf <- function(file, ...){
 
 svf2rda <- function(x, file = NULL, ...){
 
-  ## Pre
   stopifnot(require(tidyverse))
 
-  ## Content
   for(i in x){
     rawdata <- read_svf(i, trim_ws = T, ...) # TODO : object name 을 assign() function 을 이용해 선택할 수 있는 기능이 필요할듯
     save(rawdata, file = if(is.null(file)) paste0(x, ".rda") else file, compress = T)
@@ -47,10 +42,8 @@ svf2rda <- function(x, file = NULL, ...){
 
 svf2rds <- function(x, file = NULL, ...){
 
-  ## Pre
   stopifnot(require(tidyverse))
 
-  ## Content
   for(i in x){
     rawdata <- read_svf(i, trim_ws = T, ...)
     saveRDS(rawdata, file = if(is.null(file)) paste0(x, ".rda") else file, compress = T)

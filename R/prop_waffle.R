@@ -7,14 +7,11 @@
 
 prop_waffle <- function(x, rounding = 1, ...){
 
-  ## Pre
-  stopifnot(require(tidyverse)); stopifnot(require(waffle)); stopifnot(require(formattable))
+  stopifnot(require(tidyverse), require(waffle), require(formattable))
 
-  ## Content
   d <- round(prop.table(x)*100, 0)
   names(d) <- names(x) %>% paste0(" (", prop.table(x) %>% percent(rounding), ")")
 
-  ## Return
   waffle(d, ...)
 
 }

@@ -8,7 +8,6 @@
 
 regmatch <- function(pattern, text, global = F, ...){
 
-  ## content
   if(global){
     m <- gregexpr(pattern, text, ...)
     res <- regmatches(text, m)

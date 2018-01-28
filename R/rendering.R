@@ -6,10 +6,8 @@
 
 rendering <- function(pattern = NULL, ...){
 
-  ## Pre
 	stopifnot(require(rmarkdown))
 
-	## Content
   if(is.null(pattern)){
     input <- grep("\\.[rR][mM][dD]$", list.files(), perl = T, value = T)
   } else {
@@ -31,10 +29,8 @@ rendering <- function(pattern = NULL, ...){
 
 source.rmd <- function(file, delete = F, ...) {
 
-  ## Pre
   stopifnot(require(knitr))
 
-  ## Content
   rcode <- purl(file)
   source(rcode, ...)
   if(delete) file.remove(rcode)

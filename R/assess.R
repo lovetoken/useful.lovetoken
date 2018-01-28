@@ -10,22 +10,19 @@
 
 assess_rank <- function(returns.xts, choice.stock, step = F, ...){
 
-  ## Pre
-  stopifnot(require(dplyr)); stopifnot(require(xts)); stopifnot(require(ggplot2))
+  stopifnot(require(dplyr), require(xts), require(ggplot2))
 
-  ## Content
   rank_output <- apply(returns.xts, 1, function(x) rank(-x, ties.method = "max", na.last = "keep")) %>% t
   length <- apply(rank_output, 1, function(x) max(x, na.rm = T))
   pd <- as.data.frame(cbind(subset(rank_output, select = choice.stock), length))
   names(pd) <- c("rank", "max_rank")
   pd$label <- paste0(pd$rank, "/", pd$max_rank)
 
-  tryCatch(expr={
+  tryCatch(expr = {
     pd$rank <- factor(pd$rank, exclude = NULL, levels = max(pd$rank, na.rm = T):1);
     }, error = function(e) print("all NA")
   )
 
-  ## Plotting
   p <- ggplot(pd, aes(x = row.names(pd), y = rank, group = NA, label = label))
 
   if(step){
@@ -44,7 +41,6 @@ assess_rank <- function(returns.xts, choice.stock, step = F, ...){
 
   names(pd)[1] <- paste0(choice.stock, "_rank")
 
-  ## Res
   print(p)
   attr(pd, "plot") <- p
   return(pd)

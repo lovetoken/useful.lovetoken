@@ -9,7 +9,6 @@
 
 lt_col <- function(n, alpha = 1, random = F, ...){
 
-	## Pre
 	n <- as.integer(n)
 
 	pal <- c(
@@ -26,7 +25,6 @@ lt_col <- function(n, alpha = 1, random = F, ...){
 
 	if(random) pal <- sample(pal)
 
-	## Return
 	rep(pal, length = n)
 
 }

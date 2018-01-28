@@ -12,14 +12,11 @@
 
 mmadjust <- function(x, min = NA, max = NA){
 
-  ## Pre
   stopifnot(is.numeric(x))
 
-  ## Content
   x[x < min] <- min
   x[x > max] <- max
 
-  ## Return
   return(x)
 
 }
@@ -33,4 +30,7 @@ mmadjust <- function(x, min = NA, max = NA){
 #' range01(x)
 #' range01(x) * 100 # Standardization 0 to 100
 
-range01 <- function(x, ...){(x - min(x, ...)) / (max(x, ...) - min(x, ...))}
+range01 <- function(x, ...){
+  res <- (x - min(x, ...)) / (max(x, ...) - min(x, ...))
+  return(res)
+}

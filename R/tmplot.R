@@ -15,14 +15,11 @@
 
 tmplot <- function(xts, mv = c(20, 60, 120), ...){
 
-  ## Pre
-  stopifnot(require(tidyverse)); stopifnot(require(xts)); stopifnot(require(ggplot2)); stopifnot(require(reshape2))
-  stopifnot(is.numeric(mv))
+  stopifnot(is.numeric(mv), require(tidyverse), require(xts), require(ggplot2), require(reshape2))
 
   mv <- as.integer(mv)
   mv1 <- mv[1]; mv2 <- mv[2]; mv3 <- mv[3]
 
-  ## Content
   pd1 <- xts %>%
     coredata %>%
     data.frame(Index = index(xts)) %>%
@@ -58,7 +55,6 @@ tmplot <- function(xts, mv = c(20, 60, 120), ...){
     facet_grid(variable ~ ., scales = "free", ...) +
     labs(x = "", y = "")
 
-  ## Return
   return(p)
 
 }
@@ -72,9 +68,7 @@ tmplot <- function(xts, mv = c(20, 60, 120), ...){
 #' @export
 #' @examples
 #' library("quantmod")
-#'
 #' data <- getSymbols("^ks11", from = Sys.Date() - 1000, to = Sys.Date(), auto.assign = F)
-#'
 #' tm1plot(data, "KS11.Close")
 
 # tm1plot <- function(xts, choice.stock, mv = c(20, 60, 120), plotly = F, ...){

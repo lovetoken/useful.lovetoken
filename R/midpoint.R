@@ -7,16 +7,12 @@
 
 midpoint <- function(x, ...){
 
-  ## Pre
-  stopifnot(is.vector(x))
-  stopifnot(require(tidyverse))
+  stopifnot(is.vector(x), require(tidyverse))
 
-  ## content
   x_lead <- lead(x)
   res <- ((x+x_lead)/2) %>% na.omit
   attributes(res) <- NULL
 
-  ## Return
   return(res)
 
 }

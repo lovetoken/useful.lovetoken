@@ -6,7 +6,7 @@
 #' bound_trim(1:100, 5, 95)
 #' bound_trim(c(1, 5, 9, 10), 0, 9)
 #' bound_trim(rnorm(100), -1.96, 1.96)
-#'
+
 bound_trim <- function(vector, min, max){
   index <- vector >= min&vector <= max
   res <- vector[index]
@@ -21,5 +21,8 @@ bound_trim <- function(vector, min, max){
 #' @examples
 #' window(10, 0, -20, 20)
 #' window(10, 0, -5, 20)
-#'
-window <- function(W0, c, min, max) return(bound_trim((c-W0):(c+W0), min, max))
+
+window <- function(W0, c, min, max){
+  res <- bound_trim((c - W0):(c + W0), min, max)
+  return(res)
+}

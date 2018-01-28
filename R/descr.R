@@ -11,14 +11,11 @@
 
 descr <- function(x, choice=c("vars", "n", "mean", "sd", "median", "min", "max", "range"), ...){
 
-  ## Pre
-	stopifnot(require(psych))
+  stopifnot(require(psych))
 
-	## Content
 	bres <- describe(x, ...)
 	res <- bres[names(bres) %in% choice]
 
-	## Return
 	return(res)
 
 }

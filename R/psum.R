@@ -9,13 +9,11 @@
 
 psum <- function(..., na.rm = F){
 
-  # Content
   dat <- do.call(cbind, list(...))
   res <- rowSums(dat, na.rm = na.rm)
   idx_na <- !rowSums(!is.na(dat))
   res[idx_na] <- NA
 
-  # Return
   return(res)
 
 }

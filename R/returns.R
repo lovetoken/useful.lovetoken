@@ -14,12 +14,11 @@
 
 ror_diff <- function(xts, k, log.returns = F, start.omit = T, ...){
 
-  ## Pre
-  stopifnot(require(tidyverse)); stopifnot(require(xts))
+  stopifnot(require(tidyverse), require(xts))
 
   nr <- dim(xts)[1]
   nc <- dim(xts)[2]
-  k <- rep(k, length = nr) # recycle rule
+  k <- rep(k, length = nr)
 
   cd <- coredata(xts); cd[] <- NA
   returns <- xts(cd, index(xts))
@@ -52,7 +51,6 @@ ror_diff <- function(xts, k, log.returns = F, start.omit = T, ...){
 
   attr(returns, "k") <- k
 
-  ## Return
   return(returns)
 }
 
@@ -74,10 +72,8 @@ ror_diff <- function(xts, k, log.returns = F, start.omit = T, ...){
 
 ror_y <- function(xts, k){
 
-  ## Pre
-  stopifnot(require(dplyr)); stopifnot(require(xts)); stopifnot(require(lubridate))
+  stopifnot(require(dplyr), require(xts), require(lubridate))
 
-  ## Content
   xts <- na.omit(xts)
   cd <- coredata(xts); cd[] <- NA
   resEmptySpace <- xts(cd, index(xts))
@@ -94,7 +90,6 @@ ror_y <- function(xts, k){
   attr(resEmptySpace, "k_years") <- k
   returns <- resEmptySpace
 
-  ## Return
   return(returns)
 }
 
@@ -132,10 +127,8 @@ ror_m <- function(xts, k){
 
 ror_d <- function(xts, k){
 
-  ## Pre
   stopifnot(require(tidyverse)); stopifnot(require(xts)); stopifnot(require(lubridate))
 
-  ## Content
   xts <- na.omit(xts)
   cd <- coredata(xts); cd[] <- NA
   resEmptySpace <- xts(cd, index(xts))
@@ -152,6 +145,5 @@ ror_d <- function(xts, k){
   attr(resEmptySpace, "k_days") <- k
   returns <- resEmptySpace
 
-  ## Return
   return(returns)
 }
