@@ -17,5 +17,4 @@ Bandwidth indexing with Bound trim
 \examples{
 window(10, 0, -20, 20)
 window(10, 0, -5, 20)
-
 }

@@ -1,27 +1,16 @@
 ---
 title: "useful.lovetoken package"
-output:
-  html_document:
-    fig_height: 7
-    toc: yes
-    toc_float: yes
-    keep_md: yes
+output: md_document
 ---
 
-```{r env, echo=F, message=FALSE, warning=FALSE}
-## load packages
-pacman::p_load("pacman", "dplyr", "knitr", "rmarkdown", "useful.lovetoken")
-
-## global option
-opts_chunk$set(fig.align = "center", warning = F, message = F) # for knitr
-set.seed(1004)
+```{r env, echo = F, message = F, warning = F}
+pacman::p_load(dplyr, knitr, rmarkdown)
+library(useful.lovetoken)
 ```
 
-# Overview
+## useful.lovetoken
 
-R에서 자주사용하는 사용자 정의 함수를 모은 저만의 패키지 입니다.
-
-# Example
+개인적으로 자주 활용하는 사용자 정의함수를 모아놓은 R 패키지 입니다.
 
 ```{r}
 library(useful.lovetoken)
@@ -40,12 +29,14 @@ paste2(A, B)
 
 ## `psum()`
 
+병렬합계의 함수입니다.  
+
 ```{r}
 sum(1:5, c(1, 2, 3, 4, NA), c(1, NA, 3, 4, 5), na.rm = T)
 psum(1:5, c(1, 2, 3, 4, NA), c(1, NA, 3, 4, 5), na.rm = T)
 ```
 
-## `which_matrix()`
+## `which_._matrix()`
 
 ```{r}
 (m <- matrix(sample(c(T,F), 30, T), 5, 6))
@@ -53,16 +44,9 @@ which(m)
 which_matrix(m)
 ```
 
-## `trim()`
-
-정규표현식를 이용하여 공백문자에 대한 trimming 을 제공합니다.  
-
-```{r}
-trim("  Wow!  ", "leading")
-trim("  Wow!  ", "trailing")
-```
-
 ## `swap()`
+
+두 객체의 할당값을 바꿉니다.  
 
 ```{r eval = F}
 x <- 1
