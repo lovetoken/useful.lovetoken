@@ -39,48 +39,34 @@ useful.lovetoken
     (m <- matrix(sample(c(T,F), 30, T), 5, 6))
 
     ##       [,1]  [,2]  [,3]  [,4]  [,5]  [,6]
-    ## [1,]  TRUE  TRUE FALSE FALSE FALSE FALSE
-    ## [2,]  TRUE  TRUE FALSE  TRUE FALSE  TRUE
-    ## [3,] FALSE FALSE  TRUE  TRUE  TRUE  TRUE
-    ## [4,] FALSE  TRUE  TRUE FALSE  TRUE  TRUE
-    ## [5,]  TRUE FALSE  TRUE FALSE  TRUE FALSE
+    ## [1,] FALSE FALSE FALSE FALSE FALSE  TRUE
+    ## [2,]  TRUE  TRUE  TRUE FALSE  TRUE FALSE
+    ## [3,] FALSE FALSE  TRUE  TRUE FALSE FALSE
+    ## [4,]  TRUE  TRUE  TRUE FALSE  TRUE FALSE
+    ## [5,] FALSE  TRUE  TRUE  TRUE FALSE  TRUE
 
     which(m)
 
-    ##  [1]  1  2  5  6  7  9 13 14 15 17 18 23 24 25 27 28 29
+    ##  [1]  2  4  7  9 10 12 13 14 15 18 20 22 24 26 30
 
     which_matrix(m)
 
     ##    row col
-    ## 1    1   1
-    ## 2    2   1
-    ## 3    5   1
-    ## 4    1   2
-    ## 5    2   2
-    ## 6    4   2
+    ## 1    2   1
+    ## 2    4   1
+    ## 3    2   2
+    ## 4    4   2
+    ## 5    5   2
+    ## 6    2   3
     ## 7    3   3
     ## 8    4   3
     ## 9    5   3
-    ## 10   2   4
-    ## 11   3   4
-    ## 12   3   5
+    ## 10   3   4
+    ## 11   5   4
+    ## 12   2   5
     ## 13   4   5
-    ## 14   5   5
-    ## 15   2   6
-    ## 16   3   6
-    ## 17   4   6
-
-`swap()`
---------
-
-두 객체의 할당값을 바꿉니다.
-
-    x <- 1
-    y <- 2
-    swap("x", "y")
-    cat(x, y)
-
-    ## 2 1
+    ## 14   1   6
+    ## 15   5   6
 
 Install
 =======
