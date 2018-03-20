@@ -2,13 +2,18 @@
 % Please edit documentation in R/missmap.R
 \name{missmap2}
 \alias{missmap2}
-\title{Missingness Map using ggplot2}
+\title{Missingness Map after sampling}
 \usage{
-missmap2(x, only_miss_var = F)
+missmap2(x, rep = T, ...)
 }
 \arguments{
-\item{x}{A dataframe or matrix}
+\item{x}{A dataframe}
 }
 \description{
-Plots a Missingness Map showing using ggplot2
+Plots a Missingness Map showing after sampling
+}
+\examples{
+d <- matrix(rnorm(25), 5)
+d[c(2, 4), c(1, 5)] <- NA
+as.data.frame(d) \%>\% missmap2
 }
