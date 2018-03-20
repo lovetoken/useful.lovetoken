@@ -44,21 +44,6 @@ which(m)
 which_matrix(m)
 ```
 
-## `swap()`
-
-두 객체의 할당값을 바꿉니다.  
-
-```{r eval = F}
-x <- 1
-y <- 2
-swap("x", "y")
-cat(x, y)
-```
-
-```
-## 2 1
-```
-
 # Install
 
 ```{r eval=F}
