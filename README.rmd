@@ -44,9 +44,15 @@ which(m)
 which_matrix(m)
 ```
 
+## `duplicated_all()`
+
+```{r}
+duplicated_all(iris)
+```
+
 # Install
 
-```{r eval=F}
+```{r eval = F}
 devtools::install_github("lovetoken/useful.lovetoken")
 ```
 
