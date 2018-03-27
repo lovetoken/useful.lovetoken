@@ -38,10 +38,13 @@ which_approach <- function(x, k){
 
 }
 
-#' which duplicated all on data.frame
-#' @description which all duplicated index on data.frame
+#' Which duplicated all on data.frame
+#' @description Which all duplicated index on data.frame
 #' @export
 #' @examples
-#' duplicated_all(iris)
+#' index <- which_duplicated(iris)
+#' iris[index, ]
 
-duplicated_all <- function(x) x[duplicated(x) | duplicated(x, fromLast = T), ]
+which_duplicated <- function(x){
+  duplicated(x) | duplicated(x, fromLast = T)
+}
