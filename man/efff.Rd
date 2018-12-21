@@ -5,8 +5,8 @@
 \title{Efficient Frontier}
 \usage{
 efff(returns, rg = 0.01, rfr = 0.001, short = "no",
-  max.allocation = NULL, risk.premium.up = 0.9, risk.increment = 1e-04,
-  plot.only.efff = F, ...)
+  max.allocation = NULL, risk.premium.up = 0.9,
+  risk.increment = 1e-04, plot.only.efff = F, ...)
 }
 \arguments{
 \item{returns}{xts or zoo value}

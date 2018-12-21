@@ -4,7 +4,8 @@
 \alias{aap}
 \title{All available portfolio}
 \usage{
-aap(returns, rg = 0.01, rfr = 0.001, precision = 0.01, mirc = 1, ...)
+aap(returns, rg = 0.01, rfr = 0.001, precision = 0.01, mirc = 1,
+  ...)
 }
 \arguments{
 \item{returns}{xts or zoo value}
