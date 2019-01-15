@@ -5,7 +5,6 @@
 #' rendering()
 
 rendering <- function(pattern = NULL, ...){
-
 	stopifnot(require(rmarkdown))
 
   if(is.null(pattern)){
@@ -18,7 +17,6 @@ rendering <- function(pattern = NULL, ...){
 		res <- render(i, encoding = "UTF-8", ...)
 		openfd(res)
 	}
-
 }
 
 #' Code run about .rmd
@@ -28,11 +26,9 @@ rendering <- function(pattern = NULL, ...){
 #' @examples
 
 source.rmd <- function(file, delete = F, ...) {
-
   stopifnot(require(knitr))
 
   rcode <- purl(file)
   source(rcode, ...)
   if(delete) file.remove(rcode)
-
 }

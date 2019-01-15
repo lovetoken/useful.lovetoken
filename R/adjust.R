@@ -11,14 +11,12 @@
 #' mmadjust(x, , .8)
 
 mmadjust <- function(x, min = NA, max = NA){
-
   stopifnot(is.numeric(x))
 
   x[x < min] <- min
   x[x > max] <- max
 
   return(x)
-
 }
 
 #' Range scaling 0 to 1

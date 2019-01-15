@@ -8,10 +8,14 @@
 #' fuzzy_join2(left, right)
 
 fuzzy_join2 <- function(x, y){
-
   fullfuzzy <- fuzzyjoin::difference_join(x, y, by = "key", max_dist = Inf, distance_col = "dist") %>%
-    dplyr::select(-key.y) %>% dplyr::rename(key = key.x)
-  uniquefuzzy <- dplyr::group_by(fullfuzzy, key) %>% dplyr::filter(dist == min(dist)) %>% dplyr::select(-dist)
-  return(uniquefuzzy)
+    dplyr::select(-key.y) %>%
+    dplyr::rename(key = key.x)
 
+  uniquefuzzy <- dplyr::group_by(fullfuzzy, key) %>%
+    dplyr::filter(dist == min(dist)) %>%
+    dplyr::select(-dist) %>%
+    dplyr::ungroup()
+
+  return(uniquefuzzy)
 }

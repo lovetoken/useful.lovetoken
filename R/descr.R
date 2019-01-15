@@ -10,12 +10,10 @@
 #' descr(mtcars, c("vars", "n", "mean", "range"))
 
 descr <- function(x, choice=c("vars", "n", "mean", "sd", "median", "min", "max", "range"), ...){
-
   stopifnot(require(psych))
 
 	bres <- describe(x, ...)
 	res <- bres[names(bres) %in% choice]
 
 	return(res)
-
 }
