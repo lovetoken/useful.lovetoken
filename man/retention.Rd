@@ -17,5 +17,5 @@ connect_log <- tibble(
   login_date = sample(seq(ymd_h(2018010100), ymd_h(2018010323), by = "hour"), 20)
 ) \%>\%
   arrange(id, login_date) # must be - first col : index, second col : date
-retention(x, by = "days")
+retention(connect_log, by = "days")
 }

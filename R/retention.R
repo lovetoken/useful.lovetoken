@@ -9,7 +9,7 @@
 #'   login_date = sample(seq(ymd_h(2018010100), ymd_h(2018010323), by = "hour"), 20)
 #' ) %>%
 #'   arrange(id, login_date) # must be - first col : index, second col : date
-#' retention(x, by = "days")
+#' retention(connect_log, by = "days")
 
 retention <- function(x, id = names(x)[1], by = c("days", "weeks", "months")){
   x <- x %>%
@@ -19,13 +19,13 @@ retention <- function(x, id = names(x)[1], by = c("days", "weeks", "months")){
     "days"   = dplyr::mutate(x, date = floor_date(date, "day")),
     "weeks"  = dplyr::mutate(x, date = floor_date(date, "week")),
     "months" = dplyr::mutate(x, date = floor_date(date, "month"))
-  ) %>% dplyr::distinct
+  ) %>%
+    dplyr::distinct()
 
   res <- x %>%
     dplyr::left_join(x, by = id) %>%
     dplyr::rename(first_date = date.x, login_date = date.y) %>%
-    dplyr::mutate(datediff = difftime(login_date, first_date,
-                                      units = switch(by, "days" = "days", "weeks" = "weeks", "months" = "months"))) %>%
+    dplyr::mutate(datediff = difftime(login_date, first_date, units = by)) %>%
     dplyr::filter(datediff >= 0) %>%
     dplyr::count(first_date, datediff) %>%
     tidyr::spread(datediff, n)
