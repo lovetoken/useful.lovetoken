@@ -4,7 +4,7 @@
 \alias{retention}
 \title{Retention}
 \usage{
-retention(x, id = names(x)[1], by = c("days", "weeks", "months"))
+retention(x, by = c("days", "weeks", "months"))
 }
 \description{
 Retention
