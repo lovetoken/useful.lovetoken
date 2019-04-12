@@ -5,8 +5,8 @@ Version: 0.1.64
 Author: HyoJin_Song <lt.lovetoken@gmail.com>
 Maintainer: HyoJin_Song <lt.lovetoken@gmail.com>
 Description: R package for my self
-Depends: R (>= 3.4), tidyverse, chron, rmarkdown, knitr, ggplot2, xts, formattable, quadprog, psych, lubridate
-Imports: tidyverse, chron, rmarkdown, knitr, ggplot2, xts, formattable, quadprog, psych, lubridate
+Depends: R (>= 3.4), chron, rmarkdown, knitr, ggplot2, xts, formattable, quadprog, psych, lubridate, dplyr
+Imports: chron, rmarkdown, knitr, ggplot2, xts, formattable, quadprog, psych, lubridate, dplyr
 Suggests: quantmod
 RoxygenNote: 6.1.1
 License: GPL-2
