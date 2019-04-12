@@ -20,9 +20,9 @@ retention <- function(x, by = c("days", "weeks", "months"), all = TRUE){
     dplyr::rename(id = 1, date = 2)
 
   x <- switch(by,
-    "days"   = dplyr::mutate(x, date = floor_date(date, "day")),
-    "weeks"  = dplyr::mutate(x, date = floor_date(date, "week")),
-    "months" = dplyr::mutate(x, date = floor_date(date, "month"))
+    "days"   = dplyr::mutate(x, date = lubridate::floor_date(date, "day")),
+    "weeks"  = dplyr::mutate(x, date = lubridate::floor_date(date, "week")),
+    "months" = dplyr::mutate(x, date = lubridate::floor_date(date, "month"))
   ) %>%
     dplyr::distinct()
 
@@ -33,7 +33,8 @@ retention <- function(x, by = c("days", "weeks", "months"), all = TRUE){
       dplyr::mutate(datediff = difftime(login_date, first_date, units = by)) %>%
       dplyr::filter(datediff >= 0) %>%
       dplyr::count(first_date, datediff) %>%
-      tidyr::spread(datediff, n)
+      tidyr::spread(datediff, n) %>%
+      tidyimpute::impute(0)
   } else {
     res$count <- x %>%
       dplyr::left_join(x, by = "id") %>%
@@ -42,7 +43,8 @@ retention <- function(x, by = c("days", "weeks", "months"), all = TRUE){
       dplyr::mutate(datediff = difftime(login_date, first_date, units = by)) %>%
       dplyr::filter(datediff >= 0) %>%
       dplyr::count(first_date, datediff) %>%
-      tidyr::spread(datediff, n)
+      tidyr::spread(datediff, n) %>%
+      tidyimpute::impute(0)
   }
 
   res$percent <- x %>%
@@ -54,7 +56,8 @@ retention <- function(x, by = c("days", "weeks", "months"), all = TRUE){
     dplyr::group_by(first_date) %>%
     dplyr::mutate(percent = n / max(n)) %>% ungroup %>%
     dplyr::select(-n) %>%
-    tidyr::spread(datediff, percent)
+    tidyr::spread(datediff, percent) %>%
+    tidyimpute::impute(0)
 
   pd1 <- res$percent %>%
     dplyr::filter(first_date == min(first_date)) %>%
