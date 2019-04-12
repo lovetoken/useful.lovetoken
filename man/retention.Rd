@@ -4,8 +4,7 @@
 \alias{retention}
 \title{Retention}
 \usage{
-retention(x, by = c("days", "weeks", "months"), all = TRUE,
-  percent_scale = TRUE)
+retention(x, by = c("days", "weeks", "months"), all = TRUE)
 }
 \arguments{
 \item{x}{input connect log data frame}
@@ -25,5 +24,4 @@ connect_log <- tibble(
   arrange(id, login_date) # must be - first col : index, second col : date
 
 retention(connect_log, by = "days")
-retention(connect_log, by = "days", percent_scale = F)
 }
