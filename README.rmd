@@ -4,56 +4,17 @@ output: md_document
 ---
 
 ```{r env, echo = F, message = F, warning = F}
-pacman::p_load(dplyr, knitr, rmarkdown)
+pacman::p_load(chron, rmarkdown, knitr, ggplot2, xts, formattable, quadprog, psych, lubridate, dplyr, tidyimpute)
 library(useful.lovetoken)
 ```
 
 ## useful.lovetoken
 
-개인적으로 자주 활용하는 사용자 정의함수를 모아놓은 R 패키지 입니다.
-
-```{r}
-library(useful.lovetoken)
-```
-
-## `paste2()`
-
-`paste0()` 과 다르게 NA 를 문자열로 인지하지 않고 paste 를 수행합니다.  
-
-```{r}
-A <- "Hello "
-B <- c("world", "world!", NA)
-paste0(A, B)
-paste2(A, B)
-```
-
-## `psum()`
-
-병렬합계의 함수입니다.  
-
-```{r}
-sum(1:5, c(1, 2, 3, 4, NA), c(1, NA, 3, 4, 5), na.rm = T)
-psum(1:5, c(1, 2, 3, 4, NA), c(1, NA, 3, 4, 5), na.rm = T)
-```
-
-## `which_._matrix()`
-
-```{r}
-(m <- matrix(sample(c(T,F), 30, T), 5, 6))
-which(m)
-which_matrix(m)
-```
-
-## `duplicated_all()`
-
-```{r}
-duplicated_all(iris)
-```
-
-# Install
+자주 활용하는 사용자 정의함수를 모아놓은 R 패키지 입니다.
 
 ```{r eval = F}
 devtools::install_github("lovetoken/useful.lovetoken")
+library(useful.lovetoken)
 ```
 
 # License

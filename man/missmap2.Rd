@@ -4,10 +4,10 @@
 \alias{missmap2}
 \title{Missingness Map after sampling}
 \usage{
-missmap2(x, rep = T, ...)
+missmap2(x, only_miss = F)
 }
 \arguments{
-\item{x}{A dataframe}
+\item{x}{A data.frame}
 }
 \description{
 Plots a Missingness Map showing after sampling
@@ -16,4 +16,5 @@ Plots a Missingness Map showing after sampling
 d <- matrix(rnorm(25), 5)
 d[c(2, 4), c(1, 5)] <- NA
 as.data.frame(d) \%>\% missmap2
+as.data.frame(d) \%>\% missmap2(only_miss = T)
 }

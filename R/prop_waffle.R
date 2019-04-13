@@ -7,11 +7,9 @@
 
 prop_waffle <- function(x, rounding = 1, ...){
 
-  stopifnot(require(tidyverse), require(waffle), require(formattable))
-
   d <- round(prop.table(x)*100, 0)
-  names(d) <- names(x) %>% paste0(" (", prop.table(x) %>% percent(rounding), ")")
+  names(d) <- names(x) %>% paste0(" (", prop.table(x) %>% formattable::percent(rounding), ")")
 
-  waffle(d, ...)
+  waffle::waffle(d, ...)
 
 }

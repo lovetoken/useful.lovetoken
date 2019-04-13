@@ -4,8 +4,8 @@
 \alias{descr}
 \title{Describe dataset using psych::describe() function}
 \usage{
-descr(x, choice = c("vars", "n", "mean", "sd", "median", "min", "max",
-  "range"), ...)
+descr(x, choice = c("n", "mean", "sd", "median", "min", "max", "range"),
+  ...)
 }
 \arguments{
 \item{x}{A data frame or matrix}
@@ -18,5 +18,5 @@ Alias function of \code{psych::describe()}
 \examples{
 mtcars
 descr(mtcars)
-descr(mtcars, c("vars", "n", "mean", "range"))
+descr(mtcars, c("n", "mean", "range"))
 }

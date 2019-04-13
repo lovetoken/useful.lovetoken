@@ -1,7 +1,7 @@
 #' Retention
 #' @description Retention
-#' @param x input connect log data frame
-#' @param all if FALSE, first date retention
+#' @param x input data frame. Must be input first column an ID value and the second column a datetype value.
+#' @param by Set the interval.
 #' @export
 #' @examples
 #' set.seed(1004)
@@ -10,11 +10,11 @@
 #'   id = c(1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 5, 5),
 #'   login_date = sample(seq(ymd_h(2018010100), ymd_h(2018010323), by = "hour"), 20)
 #' ) %>%
-#'   arrange(id, login_date) # must be - first col : index, second col : date
+#'   arrange(id, login_date)
 #'
 #' retention(connect_log, by = "days")
 
-retention <- function(x, by = c("days", "weeks", "months"), all = TRUE){
+retention <- function(x, by = c("days", "weeks", "months")){
   res <- list()
   x <- x %>%
     dplyr::rename(id = 1, date = 2)
@@ -26,26 +26,14 @@ retention <- function(x, by = c("days", "weeks", "months"), all = TRUE){
   ) %>%
     dplyr::distinct()
 
-  if(all){
-    res$count <- x %>%
-      dplyr::left_join(x, by = "id") %>%
-      dplyr::rename(first_date = date.x, login_date = date.y) %>%
-      dplyr::mutate(datediff = difftime(login_date, first_date, units = by)) %>%
-      dplyr::filter(datediff >= 0) %>%
-      dplyr::count(first_date, datediff) %>%
-      tidyr::spread(datediff, n) %>%
-      tidyimpute::impute(0)
-  } else {
-    res$count <- x %>%
-      dplyr::left_join(x, by = "id") %>%
-      dplyr::filter(date.x == min(date.x)) %>%
-      dplyr::rename(first_date = date.x, login_date = date.y) %>%
-      dplyr::mutate(datediff = difftime(login_date, first_date, units = by)) %>%
-      dplyr::filter(datediff >= 0) %>%
-      dplyr::count(first_date, datediff) %>%
-      tidyr::spread(datediff, n) %>%
-      tidyimpute::impute(0)
-  }
+  res$count <- x %>%
+    dplyr::left_join(x, by = "id") %>%
+    dplyr::rename(first_date = date.x, login_date = date.y) %>%
+    dplyr::mutate(datediff = difftime(login_date, first_date, units = by)) %>%
+    dplyr::filter(datediff >= 0) %>%
+    dplyr::count(first_date, datediff) %>%
+    tidyr::spread(datediff, n) %>%
+    tidyimpute::impute(0)
 
   res$percent <- x %>%
     dplyr::left_join(x, by = "id") %>%
@@ -59,17 +47,23 @@ retention <- function(x, by = c("days", "weeks", "months"), all = TRUE){
     tidyr::spread(datediff, percent) %>%
     tidyimpute::impute(0)
 
-  pd1 <- res$percent %>%
+  pd <- res$percent %>%
     dplyr::filter(first_date == min(first_date)) %>%
     tidyr::gather(first_date, retention_prop)
 
-  p1 <- pd1 %>%
-    ggplot(aes(x = as.integer(first_date), y = retention_prop)) +
+  p <- pd %>%
+    ggplot(aes(x = as.integer(first_date), y = retention_prop, label = scales::percent(retention_prop))) +
+    geom_text(alpha = .5, vjust = -.5, size = 3) +
     geom_line(stat = "identity") +
     lims(y = c(0, 1)) +
-    labs(x = "D+x")
+    labs(x = switch(by, "days" = "D+x", "weeks" = "W+x", "months" = "M+x"))
 
-  print(p1)
+  print(p)
 
   return(res)
 }
+
+connect_log <- data.frame(
+  id = c(1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 5, 5),
+  login_date = sample(seq(ymd_h(2018010100), ymd_h(2018010323), by = "hour"), 20)
+)

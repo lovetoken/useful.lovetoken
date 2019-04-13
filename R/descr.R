@@ -7,13 +7,13 @@
 #' @examples
 #' mtcars
 #' descr(mtcars)
-#' descr(mtcars, c("vars", "n", "mean", "range"))
+#' descr(mtcars, c("n", "mean", "range"))
 
-descr <- function(x, choice=c("vars", "n", "mean", "sd", "median", "min", "max", "range"), ...){
-  stopifnot(require(psych))
+descr <- function(x, choice = c("n", "mean", "sd", "median", "min", "max", "range"), ...){
 
-	bres <- describe(x, ...)
-	res <- bres[names(bres) %in% choice]
+	bres <- psych::describe(x, ...)
+	res <- bres %>%
+	   dplyr::select(choice)
 
 	return(res)
 }

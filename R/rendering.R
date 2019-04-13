@@ -5,7 +5,6 @@
 #' rendering()
 
 rendering <- function(pattern = NULL, ...){
-	stopifnot(require(rmarkdown))
 
   if(is.null(pattern)){
     input <- grep("\\.[rR][mM][dD]$", list.files(), perl = T, value = T)
@@ -14,7 +13,8 @@ rendering <- function(pattern = NULL, ...){
   }
 
 	for(i in input){
-		res <- render(i, encoding = "UTF-8", ...)
+		res <- rmarkdown::render(i, encoding = "UTF-8", ...)
 		openfd(res)
 	}
+
 }
