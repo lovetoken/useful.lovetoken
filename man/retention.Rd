@@ -4,12 +4,14 @@
 \alias{retention}
 \title{Retention}
 \usage{
-retention(x, by = c("days", "weeks", "months"), all = TRUE)
+retention(x, by = c("days", "weeks", "months"), plot = T)
 }
 \arguments{
-\item{x}{input connect log data frame}
+\item{x}{input data frame. Must be input first column an ID value and the second column a datetype value.}
 
-\item{all}{if FALSE, first date retention}
+\item{by}{Set the interval.}
+
+\item{plot}{Turn on plot option about retention. Default is TRUE}
 }
 \description{
 Retention
@@ -17,11 +19,11 @@ Retention
 \examples{
 set.seed(1004)
 library(lubridate)
-connect_log <- tibble(
+connect_log <- data.frame(
   id = c(1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 5, 5),
   login_date = sample(seq(ymd_h(2018010100), ymd_h(2018010323), by = "hour"), 20)
 ) \%>\%
-  arrange(id, login_date) # must be - first col : index, second col : date
+  arrange(id, login_date)
 
 retention(connect_log, by = "days")
 }
