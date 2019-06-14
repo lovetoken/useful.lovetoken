@@ -7,10 +7,10 @@
 
 midpoint <- function(x, ...){
 
-  stopifnot(is.vector(x), require(tidyverse))
+  stopifnot(is.vector(x))
 
-  x_lead <- lead(x)
-  res <- ((x+x_lead)/2) %>% na.omit
+  x_lead <- dplyr::lead(x)
+  res <- ((x + x_lead) / 2) %>% na.omit
   attributes(res) <- NULL
 
   return(res)
